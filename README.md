@@ -59,6 +59,8 @@ Things you may want to cover:
 |condition|string|null: false|
 |shippingadress|string|null: false|
 |shippingdate|string|null: false|
+|buyer|string|null: false|
+|seller|string|null: false|
 |payer|string|null: false|
 |user|reference|null: false, foreign_key: true|
 |category|reference|null: false, foreign_key: true|
@@ -171,6 +173,8 @@ Things you may want to cover:
 
 
 ## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
 |postcode|string|null: false|
 |prefectures|string|null: false|
 |city|string|null: false|
