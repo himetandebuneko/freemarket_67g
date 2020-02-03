@@ -57,7 +57,7 @@ Things you may want to cover:
 |price|integer|null: false|
 |status|string|null: false|
 |condition|string|null: false|
-|shippingadress|string|null: false|
+|shippingaddress|string|null: false|
 |shippingdate|string|null: false|
 |buyer|string|null: false|
 |seller|string|null: false|
