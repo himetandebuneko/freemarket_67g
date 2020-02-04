@@ -1,3 +1,7 @@
+$mainBlueColor: #3CCACE;
+$mainBackgroundColor:  #fff;
+$tableBorderColor: #dedede;
+
 .preview {
   background-color: #f8f8f8;
   width: 100%;
@@ -5,7 +9,7 @@
     height: 92px;
   }
   .products {
-    background-color: #fff;
+    background-color: $mainBackgroundColor;
     height: 1163px;
     width: 620px;
     padding: 24px 40px 40px 40px;
@@ -27,10 +31,10 @@
       .first_content {
         width: 620px;
         height: 443px;
-        margin: 16px 0 0 -40px;
+        margin-top: 16px;
         text-align: center;
         list-style: none;
-        .image1 {
+        #image1 {
           height: 346px;
           width: 560px;
           object-fit: cover;
@@ -40,12 +44,12 @@
           display: flex;
           justify-content: center;
           list-style: none;
-          margin-left: -40px;
           object-fit: cover;
           .image1, .image2, .image3, .image4 {
             height: 75px;
             width: 75px;
             object-fit: cover;
+            margin: 0 5px;
           }
         }
       }
@@ -72,14 +76,14 @@
       .products_info {
         height: 426px;
         width: 620px;
-
+        
         tr {
           font-size: 14px;
           padding: 15px;
-          border: solid 1px #dedede;
+          border: solid 1px $tableBorderColor;
           th {
             padding: 8px;
-            border: solid 1px #dedede;
+            border: solid 1px $tableBorderColor;
             background-color: #eee;
             width: 30%;
           }
@@ -94,7 +98,7 @@
         justify-content: space-between;
         margin: 10px 0;
         .likes {
-          color: #3CCACE;
+          color: $mainBlueColor;
           border: 1px #ffb340 solid;
           border-radius: 40px;
           padding: 6px 10px;
@@ -112,7 +116,7 @@
     }
   }
   .comment {
-    background-color: #fff;
+    background-color: $mainBackgroundColor;
     height: 290px;
     width: 653px;
     padding: 24px;
@@ -151,14 +155,14 @@
         margin: 10px 0;
       }
       .send_btn {
-        color: #fff;
+        color: $mainBackgroundColor;
         font-size: 18px;
         height: 48px;
         line-height: 48px;
         width: 60%;
         border-radius: 100px;
-        border: 1px solid #3CCACE;
-        background: #3CCACE;
+        border: 1px solid $mainBlueColor;
+        background: $mainBlueColor;
       }
     }
   }
@@ -168,11 +172,11 @@
     list-style: none;
     .left_btn {
       text-decoration: none;
-      color: #3CCACE;
+      color: $mainBlueColor;
     }
     .right_btn {
       text-decoration: none;
-      color: #3CCACE;
+      color: $mainBlueColor;
     }
   }
   .item_more {
@@ -182,11 +186,10 @@
     margin: 24px auto 8px;
     &__btn {
     text-decoration: none;
-    color: #3CCACE;
+    color: $mainBlueColor;
     }
   }
   .footer {
     height: 200px;
-    
   }
 }
