@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  height: 200vh;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  .header {
+    z-index: 1;
+    height: 128px;
+    background: #f5f5f5;
+    text-align: center;
+    line-height: 128px;
+  }
+  .main {
+    background: #f5f5f5;
+    height: calc(200vh - 358px);
+    display: flex;
+    justify-content: center;
+    &__login {
+      background-color: white;
+      width: 456px;
+      height: calc(200vh - 358px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      &__account {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        padding-top: 40px;
+        a {
+          background-color: #0099e8;
+          color: white;
+          margin: 10px;
+          padding: 10px 120px;
+          text-decoration: none;
+        }
+      }
+      &__form {
+        padding-bottom: 20px;
+        &__box {
+          .form__email {
+            .email__text {
+              padding: 10px 140px 10px 20px;
+              margin: 10px 0 10px 10px;
+            }
+          }
+          .form__passward {
+            .passward__text {
+              padding: 10px 140px 10px 20px;
+              margin: 10px 0 10px 10px;
+            }
+          }
+          .form__check {
+            border: 2px solid #d3d3d3;
+            margin: 20px 0 30px 0;
+            padding: 30px 0 30px 10px;
+            .check__btn {
+            }
+            &__text {
+            }
+          }
+        }
+        &__button {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 10px 0 40px 0;
+          a {
+            background-color: #ea352d;
+            color: white;
+            padding: 10px 130px;
+            text-decoration: none;
+          }
+        }
+        &__passward {
+          a {
+            margin-top: 40px;
+            color: #0099e8;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    background: #f5f5f5;
+    z-index: 1;
+    height: 220px;
+    width: 456px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__box {
+      display: flex;
+      justify-content: space-between;
+      margin: 30px 0 30px 0;
+      &__text {
+        font-size: 12px;
+      }
+      &__message {
+        font-size: 12px;
+        margin: 0 20px 0 20px;
+      }
+      &__form {
+        font-size: 12px;
+      }
+    }
+    &__logo {
+      margin-top: 30px;
+      text-align: center;
+      &__text {
+        font-size: 13px;
+      }
+    }
+  }
+}
