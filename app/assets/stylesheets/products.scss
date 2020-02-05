@@ -225,7 +225,7 @@
     }
     &__price-box {
       z-index: 2;
-      position: absolute;
+      // position: absolute;
       flex:inline-block;
       top: -30px;
       left: 0;
@@ -233,7 +233,7 @@
       border-radius: 0 16px 16px 0;
       font-weight: 600;
       font-size: 16px;
-      color: #fff;
+      // color: #fff;
       background: #rgba(0,0,0,0.3);
       &__box {
         max-width: 1020px;

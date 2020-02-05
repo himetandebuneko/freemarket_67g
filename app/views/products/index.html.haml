@@ -47,15 +47,17 @@
       %li メンズ
       %li 家電・スマホ
   .main__contents
+  - @products.each do |product|
     .main__contents__header
       %li レディース新着アイテム
       %span
       = link_to "もっと見る ＞","#", class:"more"
     .main__contents__content
       .main__contents__content__img
-      .main__contents__content__text-box
+      = product.name
     .main__contents__price-box
       .main__contents__box
+        = product.price
         .main__contents__header
           .main__contents__header__name
           .main__contents__header__more
