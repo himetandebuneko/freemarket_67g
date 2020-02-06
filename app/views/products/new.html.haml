@@ -1,0 +1,169 @@
+.single-container
+  %header.single-header
+    %h1
+      %a{:href => "#"}
+        %img.image{:alt => "mercari", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?73731125"}/
+  %main.single-main
+    %section.l-single-container.buy-item-container
+      #sell-container
+        %div{"data-reactroot" => ""}
+          .sell-container-inner
+            %h2.l-single-head
+              商品の情報を入力
+            %form.sell-form
+              .sell-upload-box
+                %h3.sell-upload-head
+                  出品画像
+                  %span.form-require
+                    必須
+                %p 最大10枚までアップロードできます
+                .sell-dropbox-container.clearfix.state-image-number-10 
+                  .sell-upload-items-container
+                    .sell-upload-items.have-item-0
+                      %ul
+                  .sell-upload-drop-box.have-item-0
+                    %input.sell-upload-drop-file{:multiple => "multiple", :name => "image1", :style => "display: none;", :type => "file"}/
+                    %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
+                    %i.icon-camera
+              .sell-content
+                .form-group
+                  %label
+                    商品名
+                    %span.form-require
+                      必須
+                  %input.input-default{:placeholder => "商品名（必須 40文字まで)", :value => ""}/
+                .form-group
+                  %label
+                    商品の説明
+                    %span.form-require
+                      必須
+                  %textarea.textarea-default{:placeholder => "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :rows => "5"}
+              .sell-content.clearfix
+                %h3.sell-sub-head
+                  商品の詳細
+                .sell-form-box
+                  .form-group
+                    %label
+                      カテゴリー
+                      %span.form-require
+                        必須
+                  .select-wrap
+                    %i.icon-arrow-bottom
+                    %select{:name => 'category', class: 'select-default'}
+                      %option{:value => ""} ---
+                      %option{:value => "0"} レディース
+                  .form-group
+                    .form-group
+                      %label
+                        商品の状態
+                        %span.form-require
+                          必須
+                      .select-wrap
+                        %i.icon-arrow-bottom
+                        %select{:name => 'category', class: 'select-default'}
+                          %option{:value => ""} ---
+                          %option{:value => "0"} レディース 
+              .sell-content.clearfix
+                %h3.sell-sub-head
+                  配送について
+                .sell-form-box
+                  .form-group
+                    %label
+                      配送量の負担
+                      %span.form-require
+                        必須
+                    .select-wrap
+                      %i.icon-arrow-bottom
+                      %select{:name => 'fee', class: 'select-default'}
+                        %option{:value => ""} ---
+                        %option{:value => "0"} 送料込み(出品者負担)
+                        %option{:value => "1"} 着払い(購入者負担)
+                  .form-group
+                    %label
+                      発送元の地域
+                      %span.form-require
+                        必須
+                    .select-wrap
+                      %i.icon-arrow-bottom
+                      %select{:name => 'region', class: 'select-default'}
+                        %option{:value => ""} ---
+                        %option{:value => "0"} 北海道
+                        %option{:value => "1"} 青森県
+                  .form-group
+                    %label
+                      発送までの日数
+                      %span.form-require
+                        必須
+                    .select-wrap
+                      %i.icon-arrow-bottom
+                      %select{:name => 'day', class: 'select-default'}
+                        %option{:value => ""} ---
+                        %option{:value => "0"} 1~2日で発送
+                        %option{:value => "1"} ２〜３日で発送
+                        %option{:value => "2"} 4〜7日で発送
+              .sell-content.clearfix
+                %h3.sell-sub-head
+                  配送について
+                .sell-form-box
+                  %ul.sell-price
+                    %li.form-team
+                      %label.l-left
+                        価格
+                        %span.form-require
+                          必須
+                      .l-right.sell-price-input
+                        ¥
+                        %div
+                          %input.input-fee{:placeholder => "例）300", :value => ""}/
+                    %li.clearfix
+                      .l-left
+                        販売手数料(10%)
+                      .l-right
+                        _
+                    %li.clearfix.bold
+                      .l-left
+                        販売利益
+                      .l-right
+                        _
+              .modal{:role => "dialog", :tabindex => "-1"}
+                .modal-innner
+              .sell-content.sell-btn-box
+                %div
+                  %p
+                    %a{:href => "#", :target => "_blank"}
+                      禁止されている出品
+                    ,
+                    %a{:href => "#", :target => "_blank"} 
+                      行為
+                    を必ずご確認ください
+                  %p
+                    またブランド品でシリアルナンバー等がある場合はご記載ください。
+                    %a{:href => "#", :target => "_blank"}
+                      偽ブランドの販売
+                    は犯罪であり処罰される可能性があります。
+                  %p
+                    また、出品をもちまして
+                    %a{:href => "#"}
+                      加盟店規約
+                    に同意したことになります。
+                %button.btn-default.btn-red{:type => "submit"}
+                  出品する
+                %a.btn-default.btn-gray
+                  もどる
+  %footer.single-footer
+    %nav
+      %ul.clearfix
+        %li.first
+          %a{:href => "#", class: "second"}
+            プライバシーポリシー
+        %li.first
+          %a{:href => "#", class: "second"}
+            メルカリ利用規約
+        %li.first
+          %a{:href => "#", class: "second"}
+            特定商取引に関する表記
+    %a.single-footer-logo{:href => "#"}
+      %img{:alt => "mercari", :height => "65", :src => "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?73731125", :width => "80"}/
+    %p
+      %small.third
+        © Mercari, Inc.
