@@ -1,17 +1,13 @@
-$mainBlueColor: #3CCACE;
-$mainBackgroundColor:  #fff;
-$tableBorderColor: #dedede;
-
 .preview {
-  background-color: #f8f8f8;
+  background-color: $backgroundColor;
   width: 100%;
   .header {
     height: 92px;
   }
   .products {
-    background-color: $mainBackgroundColor;
-    height: 1163px;
-    width: 620px;
+    background-color: $mainWhiteColor;
+    height: 1300px;
+    width: 700px;
     padding: 24px 40px 40px 40px;
     margin: 10px auto;
     &__name {
@@ -49,7 +45,7 @@ $tableBorderColor: #dedede;
             height: 75px;
             width: 75px;
             object-fit: cover;
-            margin: 0 5px;
+            margin: 10px 5px;
           }
         }
       }
@@ -65,8 +61,21 @@ $tableBorderColor: #dedede;
           display: flex;
           justify-content: center;
         }
-        
       }
+      .buy {
+        height: 60px;
+        width: 620px;
+        background-color: $mainBlueColor;
+        line-height: 60px;
+        text-align: center;
+        margin: 30px 0;
+        .buy_btn {
+          color: $mainWhiteColor;
+          font-size: 24px;
+          text-decoration: none;
+        }
+      }
+
       .second_content {
         font-size: 18px;
         margin-bottom: 30px;
@@ -76,14 +85,14 @@ $tableBorderColor: #dedede;
       .products_info {
         height: 426px;
         width: 620px;
-        
+
         tr {
           font-size: 14px;
           padding: 15px;
-          border: solid 1px $tableBorderColor;
+          border: solid 1px $mainGrayColor;
           th {
             padding: 8px;
-            border: solid 1px $tableBorderColor;
+            border: solid 1px $mainGrayColor;
             background-color: #eee;
             width: 30%;
           }
@@ -98,32 +107,42 @@ $tableBorderColor: #dedede;
         justify-content: space-between;
         margin: 10px 0;
         .likes {
+          display: flex;
+          font-size: 14px;
           color: $mainBlueColor;
-          border: 1px #ffb340 solid;
+          border: 2px #ffb340 solid;
           border-radius: 40px;
-          padding: 6px 10px;
+          padding: 12px 10px;
           list-style: none;
+          .fas.fa-star {
+            display: block;
+          }
         }
+        
         .report {
+          display: flex;
           font-size: 14px;
           color: #333;
-          border: 1px solid;
+          border: 2px solid;
           border-radius: 4px;
-          padding: 6px 10px;
+          padding: 12px 10px;
           list-style: none;
+          .fas.fa-flag {
+            display: block;
+          }
         }
       }
     }
   }
   .comment {
-    background-color: $mainBackgroundColor;
-    height: 290px;
-    width: 653px;
+    background-color: $mainWhiteColor;
+    height: 400px;
+    width: 700px;
     padding: 24px;
     margin: 10px auto;
     &__field {
       font-size: 14px;
-      height: 50px;
+      height: 150px;
       overflow: scroll;
       &__info {
         display: flex;
@@ -143,19 +162,18 @@ $tableBorderColor: #dedede;
       text-align: center;
       .text_area {
         height: 82px;
-        width: 630px;
+        width: 620px;
         padding: 10px;
       }
       .text_note {
         font-size: 14px;
         background-color: #f8f8f8;
-        height: 42px;
-        width: 636px;
-        padding: 8px;
+        width: 620px;
+        padding: 5px;
         margin: 10px 0;
       }
       .send_btn {
-        color: $mainBackgroundColor;
+        color: $mainWhiteColor;
         font-size: 18px;
         height: 48px;
         line-height: 48px;
