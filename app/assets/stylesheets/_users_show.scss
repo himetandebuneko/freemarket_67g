@@ -1,12 +1,7 @@
-$mainBlueColor: #3CCACE;
-$fontColor: #333333;
-$borderWhiteColor: #eee;
-$tableWhiteColor: #fff;
-
 .body {
   color: $fontColor;
   font-size: 14px;
-  background-color: #f8f8f8;
+  background-color: $backgroundColor;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -23,7 +18,7 @@ $tableWhiteColor: #fff;
           height: 48px;
           .mypage_top {
             display: block;
-            background-color: $borderWhiteColor;
+            background-color: #eee;
             color: $fontColor;
             font-weight: bold;
             padding: 16px;
@@ -32,9 +27,9 @@ $tableWhiteColor: #fff;
           .mypage_list {
             color: $fontColor;
             display: block;
-            background-color: $tableWhiteColor;
+            background-color: $mainWhiteColor;
             padding: 16px;
-            border-top: 1px solid $borderWhiteColor;
+            border-top: 1px solid $backgroundColor;
             text-decoration: none;
           }
         }
@@ -51,9 +46,9 @@ $tableWhiteColor: #fff;
             .merpay_list {
               color: $fontColor;
               display: block;
-              background-color: $tableWhiteColor;
+              background-color: $mainWhiteColor;
               padding: 16px;
-              border-top: 1px solid $borderWhiteColor;
+              border-top: 1px solid $backgroundColor;
               text-decoration: none;
             }
           }
@@ -71,9 +66,9 @@ $tableWhiteColor: #fff;
             .setting_list {
               color: $fontColor;
               display: block;
-              background-color: $tableWhiteColor;
+              background-color: $mainWhiteColor;
               padding: 16px;
-              border-top: 1px solid $borderWhiteColor;
+              border-top: 1px solid $backgroundColor;
               text-decoration: none;
             }
           }
@@ -88,7 +83,7 @@ $tableWhiteColor: #fff;
       margin-top: 40px;
       &_info {
         position: relative;
-        background-color: $borderWhiteColor;
+        background-color: #eee;
         width: 700px;
         height: 160px;
         padding: 20px;
@@ -122,7 +117,7 @@ $tableWhiteColor: #fff;
           .active {
             width: 50%;
             display: block;
-            background-color: $tableWhiteColor;
+            background-color: $mainWhiteColor;
             border-top: 2px solid $mainBlueColor;
             text-decoration: none;
             text-align: center;
@@ -130,7 +125,7 @@ $tableWhiteColor: #fff;
           li {
             width: 50%;
             display: block;
-            background-color: $borderWhiteColor;
+            background-color: #eee;
             text-decoration: none;
             text-align: center;
           }
@@ -141,25 +136,25 @@ $tableWhiteColor: #fff;
           .topic {
             color: $fontColor;
             display: block;
-            background-color: $tableWhiteColor;
+            background-color: $mainWhiteColor;
             padding: 16px;
-            border-top: 1px solid $borderWhiteColor;
+            border-top: 1px solid $backgroundColor;
             text-decoration: none;
           }
           .todo {
             color: $fontColor;
             display: block;
-            background-color: $tableWhiteColor;
+            background-color: $mainWhiteColor;
             padding: 16px;
-            border-top: 1px solid $borderWhiteColor;
+            border-top: 1px solid $backgroundColor;
             text-decoration: none;
           }
           .all {
             color: $fontColor;
             display: block;
-            background-color: $tableWhiteColor;
+            background-color: $mainWhiteColor;
             padding: 16px;
-            border-top: 1px solid $borderWhiteColor;
+            border-top: 1px solid $backgroundColor;
             text-decoration: none;
           }
         }
@@ -178,7 +173,7 @@ $tableWhiteColor: #fff;
       margin-top: 40px;
       width: 700px;
       h3 {
-        background-color: #fafafa;
+        background-color: #eee;
         height: 72px;
         padding: 0 16px;
         line-height: 72px;
@@ -197,7 +192,7 @@ $tableWhiteColor: #fff;
           li.active {
             width: 50%;
             display: block;
-            background-color: $tableWhiteColor;
+            background-color: $mainWhiteColor;
             border-top: 2px solid $mainBlueColor;
             text-decoration: none;
             text-align: center;
@@ -205,7 +200,7 @@ $tableWhiteColor: #fff;
           li {
             width: 50%;
             display: block;
-            background-color: $borderWhiteColor;
+            background-color: #eee;
             text-decoration: none;
             text-align: center;
           }
@@ -215,17 +210,17 @@ $tableWhiteColor: #fff;
           .deal {
             color: $fontColor;
             display: block;
-            background-color: $tableWhiteColor;
+            background-color: $mainWhiteColor;
             padding: 16px;
-            border-top: 1px solid $borderWhiteColor;
+            border-top: 1px solid $backgroundColor;
             text-decoration: none;
           }
           .past {
             color: $fontColor;
             display: block;
-            background-color: $tableWhiteColor;
+            background-color: $mainWhiteColor;
             padding: 16px;
-            border-top: 1px solid $borderWhiteColor;
+            border-top: 1px solid $backgroundColor;
             text-decoration: none;
           }
         }
