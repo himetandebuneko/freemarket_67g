@@ -1,0 +1,13 @@
+.header
+  部分テンプレート
+
+.body
+  .left_content
+    = render partial: 'sidebar'
+  .right_content
+    .logout
+      .logout_btn
+        = link_to "ログアウト", '#', method: :delete, class: 'btn'
+
+.footer
+  部分テンプレート

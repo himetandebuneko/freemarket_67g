@@ -1,0 +1,243 @@
+$mainBlueColor: #3CCACE;
+$fontColor: #333333;
+$borderWhiteColor: #eee;
+$tableWhiteColor: #fff;
+
+.body {
+  color: $fontColor;
+  font-size: 14px;
+  background-color: #f8f8f8;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 40px auto 0;
+  padding: 0 0 40px;
+  .left_content {
+    width: 280px;
+    margin: 40px 40px 0 0;
+    display: block;
+    .navigation {
+      ul.mypage {
+        li {
+          list-style: none;
+          height: 48px;
+          .mypage_top {
+            display: block;
+            background-color: $borderWhiteColor;
+            color: $fontColor;
+            font-weight: bold;
+            padding: 16px;
+            text-decoration: none;
+          } 
+          .mypage_list {
+            color: $fontColor;
+            display: block;
+            background-color: $tableWhiteColor;
+            padding: 16px;
+            border-top: 1px solid $borderWhiteColor;
+            text-decoration: none;
+          }
+        }
+      }
+      .merpay {
+        margin-top: 40px;
+        font-size: 16px;
+        h3 {
+          font-weight: bold;
+        }
+        ul {
+          font-size: 14px;
+          li {
+            .merpay_list {
+              color: $fontColor;
+              display: block;
+              background-color: $tableWhiteColor;
+              padding: 16px;
+              border-top: 1px solid $borderWhiteColor;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .setting {
+        margin-top: 40px;
+        font-size: 16px;
+        h3 {
+          font-weight: bold;
+        }
+        ul {
+          font-size: 14px;
+          li {
+            .setting_list {
+              color: $fontColor;
+              display: block;
+              background-color: $tableWhiteColor;
+              padding: 16px;
+              border-top: 1px solid $borderWhiteColor;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .right_content {
+    .user {
+      height: 600px;
+      width: 700px;
+      margin-top: 40px;
+      &_info {
+        position: relative;
+        background-color: $borderWhiteColor;
+        width: 700px;
+        height: 160px;
+        padding: 20px;
+        text-align: center;
+        &__name {
+          color: $fontColor;
+          text-decoration: none;
+        }
+        &__products {
+          display: flex;
+          justify-content: center;
+          margin-top: 5px;
+          &__status {
+            
+          }
+          &__length {
+            margin-left: 16px;
+          }
+        }
+      }
+
+      &_topic {
+        width: 700px;
+        .tab {
+          height: 74px;
+          width: 700px;
+          line-height: 74px;
+          font-size: 16px;
+          font-weight: bold;
+          display: flex;
+          .active {
+            width: 50%;
+            display: block;
+            background-color: $tableWhiteColor;
+            border-top: 2px solid $mainBlueColor;
+            text-decoration: none;
+            text-align: center;
+          }
+          li {
+            width: 50%;
+            display: block;
+            background-color: $borderWhiteColor;
+            text-decoration: none;
+            text-align: center;
+          }
+        }
+        .area {
+          width: 700px;
+
+          .topic {
+            color: $fontColor;
+            display: block;
+            background-color: $tableWhiteColor;
+            padding: 16px;
+            border-top: 1px solid $borderWhiteColor;
+            text-decoration: none;
+          }
+          .todo {
+            color: $fontColor;
+            display: block;
+            background-color: $tableWhiteColor;
+            padding: 16px;
+            border-top: 1px solid $borderWhiteColor;
+            text-decoration: none;
+          }
+          .all {
+            color: $fontColor;
+            display: block;
+            background-color: $tableWhiteColor;
+            padding: 16px;
+            border-top: 1px solid $borderWhiteColor;
+            text-decoration: none;
+          }
+        }
+        .area ul {
+          display: none;
+        }
+        .area ul.show {
+          display: block;
+          height: 48px;
+          line-height: 48px;
+        }
+      }
+    }
+
+    .products {
+      margin-top: 40px;
+      width: 700px;
+      h3 {
+        background-color: #fafafa;
+        height: 72px;
+        padding: 0 16px;
+        line-height: 72px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__list {
+        width: 700px;
+        .tab {
+          font-size: 16px;
+          font-weight: bold;
+          height: 72px;
+          width: 700px;
+          line-height: 72px;
+          display: flex;
+          li.active {
+            width: 50%;
+            display: block;
+            background-color: $tableWhiteColor;
+            border-top: 2px solid $mainBlueColor;
+            text-decoration: none;
+            text-align: center;
+          }
+          li {
+            width: 50%;
+            display: block;
+            background-color: $borderWhiteColor;
+            text-decoration: none;
+            text-align: center;
+          }
+        }
+        .area {
+          width: 700px;
+          .deal {
+            color: $fontColor;
+            display: block;
+            background-color: $tableWhiteColor;
+            padding: 16px;
+            border-top: 1px solid $borderWhiteColor;
+            text-decoration: none;
+          }
+          .past {
+            color: $fontColor;
+            display: block;
+            background-color: $tableWhiteColor;
+            padding: 16px;
+            border-top: 1px solid $borderWhiteColor;
+            text-decoration: none;
+          }
+        }
+        .area ul.show {
+          display: block;
+          height: 48px;
+          line-height: 48px;
+        }
+        .area ul {
+          display: none;
+        }
+      }
+    }
+  }
+}
