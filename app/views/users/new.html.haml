@@ -1,13 +1,20 @@
 .box
   .header
-    -# = image_tag '/assets/images/test_image.png'
-    %a mercari
+    = link_to image_tag("/images/logo/logo.png", width: '120px', alt: "logo1"),root_path
+
   .main
     .main__login
       .main__login__account
         %p アカウントをお持ちでない方はこちら
         = link_to "#" do
           新規会員登録
+      .main__login__api
+        .main__login__api__facebook
+          = link_to "#" do
+            Facebookでログイン
+        .main__login__api__google
+          = link_to "#" do
+            Googleでログイン
       .main__login__form
         .main__login__form__box
           .form__email
@@ -17,18 +24,18 @@
             = form_with do |f|
               = f.text_field :passward, placeholder: "パスワード", class: "passward__text"
           .form__check
-            = form_with do |f|
-              = f.text_field :nickname, type: "checkbox", class: "check__btn"
-              .form__check__text
-                私はロボットではありません
-              .form__check__logo
-                .form__check__logo__message
+            .form__check__box
+              = form_with do |f|
+                = f.text_field :nickname, type: "checkbox", class: "check__btn"
+            .form__check__text
+              私はロボットではありません
         .main__login__form__button
           = link_to "#" do
             ログイン
         .main__login__form__passward
           = link_to "#" do
             パスワードをお忘れの方
+
   .footer
     .footer__box
       .footer__box__text
