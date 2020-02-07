@@ -1,4 +1,4 @@
-class CredtsController < ApplicationController
+class CreditsController < ApplicationController
   
   def new
     
