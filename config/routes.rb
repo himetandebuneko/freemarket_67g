@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :products, only: [:show, :new] 
   resources :users, only: [:index, :new, :create, :show]
   get       '/products/confirm/:id', to: 'products#confirm'
+  resources :credits, only: [:new, :create, :show, :edit, :destroy]
 end
