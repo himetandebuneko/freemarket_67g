@@ -1,1 +1,46 @@
-hello
+.header
+  部分テンプレート
+
+.body
+  .left_content
+    = render partial: 'users/sidebar'
+  .credits
+    .credits_form
+      .credits_form__label
+        クレジットカード情報入力
+      .credits_form__box
+        = form_with url: credits_path, id: 'credit_form' do |f|
+          .credits_form__box__number
+            = f.label :カード番号, class: 'form_label'
+            %span.caution 必須
+          .credits_form__box__input
+            = f.text_field :number, class: 'credit__input', id: 'credit_number', maxlength: "16", placeholder: "半角数字のみ"
+            .registration_error{type: "hidden", value: "必須項目です"}
+          %ul
+            %li= image_tag '/credits/visa.svg', height:"20px", wight: "auto", alt: 'visa', class: 'credits_icon'
+            %li= image_tag '/credits/master-card.svg', height:"20px", wight: "auto", alt: 'aster-card', class: 'credits_icon'
+            %li= image_tag '/credits/saison-card.svg', height:"20px", wight: "auto", alt: 'saison-card', class: 'credits_icon'
+            %li= image_tag '/credits/jcb.svg', height:"20px", wight: "auto", alt: 'visa', class: 'credits_icon'
+            %li= image_tag '/credits/american_express.svg', height:"20px", wight: "auto", alt: 'american_express', class: 'credits_icon'
+            %li= image_tag '/credits/dinersclub.svg', height:"20px", wight: "auto", alt: 'dinersclub', class: 'credits_icon'
+            %li= image_tag '/credits/discover.svg', height:"20px", wight: "auto", alt: 'discover', class: 'credits_icon'
+
+          .credits_form__box__expiredate
+            = f.label :有効期限, class: 'form_label'
+            %span.caution 必須
+            .credits_expiredate
+              = f.date_select :expiredate, end_year: 2030, start_year: 2020, order:[:month,:year,:day], use_month_numbers: true, discard_day: true ,date_separator:'月', prompt: "--",with_css_classes:''
+              %span
+                年
+          .credits_form__box__securitycode
+            = f.label :セキュリティーコード, class: 'form_label'
+            %span.caution 必須
+            = f.text_field :securitycode, class: 'credit__input', id: "cvc", maxlength: "4" ,placeholder: "カード背面４桁もしくは３桁の番号"
+          .credits_form__box__question
+            .credits_form__box__question__text 
+              カード裏面の番号とは？
+          .credits_form__box__send
+            = f.submit "追加する", class: "credit_send_btn", id: "token_submit"
+
+.footer
+  部分テンプレート

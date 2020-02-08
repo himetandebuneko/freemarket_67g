@@ -1,2 +1,2 @@
-module CredtsHelper
+module CreditsHelper
 end

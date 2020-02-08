@@ -1,0 +1,102 @@
+
+.credits {
+  .credits_form {
+    font-size: 30px;
+    height: 600px;
+    width: 700px;
+    margin-top: 40px;
+    background-color: $mainWhiteColor;
+    &__label {
+      font-size: 24px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 32px;
+      padding: 8px 24px;
+      border-bottom: 2px solid $backgroundColor;
+    }
+    &__box {
+      width: 350px;
+      // background-color: red;
+      margin: 40px auto 64px;
+      &__input {
+        .registation_error {
+          
+        }
+      }
+      ul {
+        display: flex;
+        margin-top: 10px;
+        li {
+          margin-left: 10px;
+        }
+      }
+      &__expiredate{
+        margin-top: 32px;
+        .month {
+          height: 50px;
+          width: 100px;
+          margin: 10px 5px 10px 0;
+          background-color: $mainWhiteColor;
+          border: 1px solid #ccc;
+        }
+        .year {
+          height: 50px;
+          width: 100px;
+          margin: 10px 0 10px 10px;
+          background-color: $mainWhiteColor;
+          border: 1px solid #ccc
+        }
+
+      }
+      &__securitycode{
+        margin-top: 32px;
+      }
+      &__question {
+        text-align: end;
+        &__text {
+          font-size: 14px;
+          color: $mainBlueColor;
+        }
+      }
+      &__send {
+        height: 45px;
+        width: 350px;
+        background-color: $mainBlueColor;
+        line-height: 45px;
+        text-align: center;
+        margin-top: 32px;
+        
+        .credit_send_btn {
+          color: $mainWhiteColor;
+          display: inline;
+          background-color: $mainBlueColor;
+          font-size: 18px;
+          display: inline;
+        }
+      }
+    }
+  }
+}
+
+.caution {
+  background-color: $mainBlueColor;
+  color: $mainWhiteColor;
+  font-size: 12px;
+  border-radius: 3px;
+  padding: 2px 4px;
+  margin-left: 5px;
+
+}
+.form_label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.credit__input {
+  width: 310px;
+  font-size: 16px;
+  margin: 8px 0;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
