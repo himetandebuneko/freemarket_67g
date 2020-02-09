@@ -14,7 +14,7 @@
             = f.label :カード番号, class: 'form_label'
             %span.caution 必須
           .credits_form__box__input
-            = f.text_field :number, class: 'credit__input', id: 'credit_number', maxlength: "16", placeholder: "半角数字のみ"
+            = f.text_field :number, class: 'credit__input', id: 'number', maxlength: "16", placeholder: "半角数字のみ"
             .registration_error{type: "hidden", value: "必須項目です"}
           %ul
             %li= image_tag '/credits/visa.svg', height:"20px", wight: "auto", alt: 'visa', class: 'credits_icon'
@@ -35,12 +35,13 @@
           .credits_form__box__securitycode
             = f.label :セキュリティーコード, class: 'form_label'
             %span.caution 必須
-            = f.text_field :securitycode, class: 'credit__input', id: "cvc", maxlength: "4" ,placeholder: "カード背面４桁もしくは３桁の番号"
+            = f.text_field :securitycode, class: 'credit__input', id: "securitycode", maxlength: "4" ,placeholder: "カード背面４桁もしくは３桁の番号"
           .credits_form__box__question
             .credits_form__box__question__text 
               カード裏面の番号とは？
-          .credits_form__box__send
+          .credits_form__box__send#card_token
             = f.submit "追加する", class: "credit_send_btn", id: "token_submit"
 
 .footer
   部分テンプレート
+  #card_token 

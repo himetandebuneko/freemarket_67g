@@ -1,18 +1,25 @@
 class CreditsController < ApplicationController
   
   require 'payjp'
-
+  Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
   def new
     
   end
 
   def create
-    Payjp.api_key = ""
-    Payjp::Charge.create(
-      amount: 1100, # 決済する値段
-      card: params['payjp-token'], # フォームを送信すると生成されるトークン
-      currency: 'jpy'
-    )
+    
+    if params["payjpToken"].blank?
+    # paramsの中にjsで作った'payjp-tokenが存在するか確かめる
+      redirect_to action: "new"
+    else
+      customer = Payjp::Customer.create(
+      card: params['payjpToken'],
+      metadata: {user_id: current_user.id}
+      )
+     # ↑ここでpay.jpに保存
+      @card = Credit.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+     # ここでdbに保存
+    end
   end
 
   def show
