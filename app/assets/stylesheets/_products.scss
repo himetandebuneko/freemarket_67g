@@ -75,6 +75,7 @@
         color: black;
       }
       &__categories {
+        display: flex;
         .btn-registration{
           background-color: #00b7ce;
           color: rgb(255,255,255);
@@ -130,6 +131,7 @@
 .nav {
   position: relative;
   background-size: cover;
+  margin: 100px;
   .slick-prev {
     visibility:hidden;
   }
