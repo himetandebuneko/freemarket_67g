@@ -9,7 +9,8 @@
           .sell-container-inner
             %h2.l-single-head
               商品の情報を入力
-            %form.sell-form
+          = form_with(model: @product, url: products_path, local: true, multipart: true) do |f|
+            .sell-form
               .sell-upload-box
                 %h3.sell-upload-head
                   出品画像
@@ -21,7 +22,14 @@
                     .sell-upload-items.have-item-0
                       %ul
                   .sell-upload-drop-box.have-item-0
-                    %input.sell-upload-drop-file{multiple: "multiple", name: "image1", style: "display: none;", type: "file"}/
+                    #image-box
+                      = f.fields_for :images do |i|
+                        .js-file_group{data: {id: "#{i.index}"}}
+                          = i.label :image, class: "dropzone-box", for: "_images_image" do
+                            = i.file_field :image, class: "js-file"
+                            %span.js-remove 削除
+                            -# = link_to '編集', "#{edit_product_path}"
+                    -# %input.sell-upload-drop-file{multiple: "multiple", name: "image1", type: "file"}/
                     %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
                     %i.icon-camera
               .sell-content
@@ -30,13 +38,13 @@
                     商品名
                     %span.form-require
                       必須
-                  %input.input-default{placeholder: "商品名（必須 40文字まで)", value: ""}/
+                  %input.input-default{placeholder: "商品名（必須 40文字まで)", value: "", name: "name"}/
                 .form-group
                   %label
                     商品の説明
                     %span.form-require
                       必須
-                  %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5"}
+                  %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5", name: "detail"}
               .sell-content.clearfix
                 %h3.sell-sub-head
                   商品の詳細
@@ -73,7 +81,7 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      %select{:name => 'fee', class: 'select-default'}
+                      %select{name: 'payer', class: 'select-default'}
                         %option{value: ""} ---
                         %option{value: "0"} 送料込み(出品者負担)
                         %option{value: "1"} 着払い(購入者負担)
@@ -84,7 +92,7 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      %select{name: 'region', class: 'select-default'}
+                      %select{name: 'shippingaddress', class: 'select-default'}
                         %option{value: ""} ---
                         %option{value: "0"} 北海道
                         %option{value: "1"} 青森県
@@ -95,7 +103,7 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      %select{name: 'day', class: 'select-default'}
+                      %select{name: 'shippingdate', class: 'select-default'}
                         %option{value: ""} ---
                         %option{value: "0"} 1~2日で発送
                         %option{value: "1"} ２〜３日で発送
@@ -113,7 +121,7 @@
                       .l-right.sell-price-input
                         ¥
                         %div
-                          %input.input-fee{placeholder: "例）300", value: ""}/
+                          %input.input-fee{placeholder: "例）300", value: "", name: "price"}/
                     %li.clearfix
                       .l-left
                         販売手数料(10%)
