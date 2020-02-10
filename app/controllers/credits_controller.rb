@@ -4,7 +4,7 @@ class CreditsController < ApplicationController
   Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
   
   def new
-    
+    # redirect_to action: 'show' if current_user.card.present?
   end
 
   def create  
@@ -19,6 +19,11 @@ class CreditsController < ApplicationController
      # ↑ここでpay.jpに保存
       @card = Credit.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
      # ここでdbに保存
+      if @card.save
+        redirect_to action: 'show'
+      else
+        redirect_to action: 'create'
+      end
     end
   end
 
