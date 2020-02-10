@@ -10,8 +10,8 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :shippingdate, null: false
       t.string :buyer, null: false
       t.string :seller, null: false
-      # t.references :user, null: false, foreign_key: true
-      # t.references :category, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
+      t.references :category, null: false, foreign_key: true
       t.timestamps
     end
   end
