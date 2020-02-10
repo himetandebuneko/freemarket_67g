@@ -1,0 +1,24 @@
+.header
+  部分テンプレート
+
+.body
+  .left_content
+    = render partial: 'users/sidebar'
+  .credits
+    .credits_show
+      .credits_show__label
+        支払い方法
+      .credits_show__main
+        .credits_show__main__head
+          クレジットカード一覧
+        .credits_show__main__body
+          %ul.credits_show__main__body__top
+            %li= image_tag '/credits/visa.svg', height:"15px", wight: "auto", alt: 'visa', class: 'credits_icon'
+            %li= link_to '削除する', '/credits/:id', method: :delete, class: 'credits_delete_btn'
+          .credits_show__main__body__middle
+            カードNO
+          .credits_show__main__body__bottom
+            02/20
+        .credits_show__main__footer
+          .credits_show__main__footer__about
+            = link_to '支払い方法について  >>', '#', class: 'credits_show__main__footer__about__btn'
