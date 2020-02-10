@@ -2,12 +2,12 @@ class CreditsController < ApplicationController
   
   require 'payjp'
   Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
+  
   def new
     
   end
 
-  def create
-    
+  def create  
     if params["payjpToken"].blank?
     # paramsの中にjsで作った'payjp-tokenが存在するか確かめる
       redirect_to action: "new"

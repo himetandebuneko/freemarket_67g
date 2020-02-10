@@ -19,10 +19,10 @@ $(document).on('turbolinks:load', function() {
         form.find('button').prop('disabled', false);
       }
       else {
-        $(".number").removeAttr("name");
-        $(".cvc").removeAttr("name");
-        $(".exp_month").removeAttr("name");
-        $(".exp_year").removeAttr("name");
+        $("#number").removeAttr("name");
+        $("#securitycode").removeAttr("name");
+        $("#_expiredate_2i").removeAttr("name");
+        $("#_expiredate_1i").removeAttr("name");
 
         var token = response.id;
 
