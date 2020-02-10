@@ -21,7 +21,6 @@ class ProductsController < ApplicationController
         end
         format.html{redirect_to root_path}
       else
-        binding.pry
         @product.images.build
         format.html{render action: 'new'}
       end
