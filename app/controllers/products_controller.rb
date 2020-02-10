@@ -58,7 +58,7 @@ private
   end
 
   def set_image
-    # @images = Image.last(10)
+    @images = Image.last(10)
   end
   
 end
