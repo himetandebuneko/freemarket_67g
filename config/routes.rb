@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
- 
-  root to: 'products#index'
   devise_for :users
-  resources :products
+  root to: 'products#index'
+  resources :products, only: [:show, :new] 
   resources :users, only: [:index, :new, :create, :show]
   get       '/products/confirm/:id', to: 'products#confirm'
 end
