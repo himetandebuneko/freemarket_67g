@@ -7,6 +7,7 @@
     .contents
       
       .first_content
+        //= @products.images.image
         .first_content_image= image_tag '/yakiniku.jpg', alt: "test", id: 'image1'
         %ul.sub_image 
           %li= image_tag '/yakiniku.jpg', alt: "test1", class: 'image1'
@@ -14,7 +15,8 @@
           %li= image_tag '/images2.jpg', alt: "test3", class: 'image3'
           %li= image_tag '/images3.jpg', alt: "test4", class: 'image4'
       .price
-        10,000円
+        = @product.price
+        円
         .price__payer
           .price__payer__tax
             (税込）
@@ -22,7 +24,7 @@
             送料込み
         
       .buy
-        = link_to '購入画面に進む', '#', class: 'buy_btn'
+        = link_to '購入画面に進む', '/products/confirm/:id', class: 'buy_btn'
         .sa
 
       .second_content
@@ -31,44 +33,44 @@
         %table
           %tr
             %th
-              出品者(user_name)
+              出品者
             %td
-              furima
+              = @product.seller
           %tr
             %th
-              カテゴリー(category)
+              カテゴリー
             %td
-              food
+              = @product.category
           %tr
             %th
-              商品のサイズ(size)
+              商品のサイズ
             %td
-              big
+              = @product.size
           %tr
             %th
-              商品の状態(condition)
+              商品の状態
             %td
-              good
+              = @product.condition
           %tr
             %th
-              配送料の負担(payer)
+              配送料の負担
             %td
-              出品者負担
+              -# = @product.payer
           %tr
             %th
-              発送元地域(shippingadress)
+              発送元地域
             %td
-              tokyo
+              = @product.shippingaddress
           %tr
             %th
-              配送状態(status)
+              配送状態
             %td
-              発送ずみ
+              -# = @product.status
           %tr
             %th
-              発送予定日数(shippingdate)
+              発送予定日数
             %td
-              3days
+              = @product.shippingdate
       .option
         %ul.likes
           %i.fas.fa-star
