@@ -51,6 +51,7 @@ class ProductsController < ApplicationController
     @product = Product.find(1)
     #現時点では値が取得できないためfind(1)で仮置き
     #Product.find(params[:id])に変更する
+    @current_user = User.find_by(id: session[:user_id])
   end
 
 private
