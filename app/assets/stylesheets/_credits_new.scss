@@ -31,14 +31,14 @@
       }
       &__expiredate{
         margin-top: 32px;
-        .month {
+        .month_select {
           height: 50px;
           width: 100px;
           margin: 10px 5px 10px 0;
           background-color: $mainWhiteColor;
           border: 1px solid #ccc;
         }
-        .year {
+        .year_select {
           height: 50px;
           width: 100px;
           margin: 10px 0 10px 10px;
