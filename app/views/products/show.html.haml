@@ -7,7 +7,7 @@
     .contents
       
       .first_content
-        //= @products.images.image
+        -# = @products.images.image
         .first_content_image= image_tag '/yakiniku.jpg', alt: "test", id: 'image1'
         %ul.sub_image 
           %li= image_tag '/yakiniku.jpg', alt: "test1", class: 'image1'
@@ -22,11 +22,12 @@
             (税込）
           .price__status__postage
             送料込み
-      .buy
-        .not_buy-btn 購入画面に進む
-
-      .buy
-        = link_to '購入画面に進む', '/products/confirm/:id', class: 'buy_btn'
+      - if user_signed_in? && current_user.id == @product.seller
+        .buy
+          .not_buy-btn 購入画面に進む
+      - else
+        .buy
+          = link_to '購入画面に進む', '/products/confirm/:id', class: 'buy_btn'
 
       .second_content
         焼肉(name)
