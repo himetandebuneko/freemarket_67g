@@ -24,13 +24,6 @@ class CreditsController < ApplicationController
   end
 
   def show
-    card = Credit.where(user_id: current_user.id).first
-    if credits.blank?
-      redirect_to new_credit_path 
-    else
-      customer = Payjp::Customer.retrieve(credit.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
-    end
     
   end 
 
