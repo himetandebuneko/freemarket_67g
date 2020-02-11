@@ -47,6 +47,12 @@ class ProductsController < ApplicationController
 
   end
 
+  def show
+    @product = Product.find(1)
+    #現時点では値が取得できないためfind(1)で仮置き
+    #Product.find(params[:id])に変更する
+  end
+
 private
 
   def product_params
