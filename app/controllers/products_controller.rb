@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_image
+  before_action :set_product, only:["destroy","show"]
+
   def index
     @products = Product.last(10)
     @products = Product.includes(:images).order('created_at DESC')
@@ -32,15 +34,18 @@ class ProductsController < ApplicationController
   
   def update
     if @product.update(product_params)
-      redirect_to root_path
+       redirect_to root_path
     else
       render :edit
     end
   end
   
   def destroy
-    @product.destroy
-    redirect_to root_path
+    if @product.destroy
+      redirect_to root_path
+    else
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   def confirm
@@ -48,9 +53,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(1)
-    #現時点では値が取得できないためfind(1)で仮置き
-    #Product.find(params[:id])に変更する
   end
 
 private
