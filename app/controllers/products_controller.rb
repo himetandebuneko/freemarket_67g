@@ -38,7 +38,8 @@ class ProductsController < ApplicationController
     end
   end
   
-  def destroy
+  def destroy 
+    @product = Product.find(params[:id])
     @product.destroy
     redirect_to root_path
   end
@@ -48,7 +49,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(1)
+    @product = Product.find(params[:id])
     #現時点では値が取得できないためfind(1)で仮置き
     #Product.find(params[:id])に変更する
   end
