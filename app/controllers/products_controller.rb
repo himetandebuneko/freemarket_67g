@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_image
   def index
     @products = Product.last(10)
-    @products = Product.includes(:images).order('created_at DESC')
+    @product = Product.includes(:images).order('created_at DESC')
   end
 
   def new
@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
         end
         format.html{redirect_to root_path}
       else
+        binding.pry
         @product.images.build
         format.html{render action: 'new'}
       end

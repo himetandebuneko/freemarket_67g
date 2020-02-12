@@ -23,13 +23,21 @@
                       %ul
                   .sell-upload-drop-box.have-item-0
                     #image-box
-                      = f.fields_for :images do |i|
-                        .js-file_group{data: {id: "#{i.index}"}}
-                          = i.label :image, class: "dropzone-box", for: "_images_image" do
+                      #previews
+                        - if @product.persisted?
+                          - @product.images.each_with_index do |image, im|
+                            = image_tag image.src.url, data: { index: im}, width: "100", height: "100"
+                        = f.fields_for :images do |i|
+                          .js-file_group{data: {id: "#{i.index}"}}
                             = i.file_field :image, class: "js-file"
-                            %span.js-remove 削除
+                            %span.js-remove 
+                          - if @product.persisted?
+                            = i.check_box :destroy, data:{ id: image.index }, class: 'hidden-destroy'
                             -# = link_to '編集', "#{edit_product_path}"
-                    -# %input.sell-upload-drop-file{multiple: "multiple", name: "image1", type: "file"}/
+                        - if @product.persisted?
+                          .js-file_group{data: {id: "#{@product.images.count}"}}
+                            = i.file_field :image, name: "product[images_attributes][#{@product.images.count}][src]", class: "js-file"
+                            .js-remove 削除
                     %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
                     %i.icon-camera
               .sell-content
@@ -38,13 +46,17 @@
                     商品名
                     %span.form-require
                       必須
-                  %input.input-default{placeholder: "商品名（必須 40文字まで)", value: "", name: "name"}/
+
+                  -# %inputを削除
+                  = f.text_field :name, placeholder: "商品名（必須 40文字まで)", value: "", class: "input-default"
                 .form-group
                   %label
                     商品の説明
                     %span.form-require
                       必須
-                  %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5", name: "detail"}
+
+                  -# %textareaを削除    
+                  = f.text_area :detail, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5", class: "textarea-default"
               .sell-content.clearfix
                 %h3.sell-sub-head
                   商品の詳細
@@ -56,9 +68,10 @@
                         必須
                   .select-wrap
                     %i.icon-arrow-bottom
-                    %select{name: 'category', class: 'select-default'}
-                      %option{value: ""} ---
-                      %option{value: "0"} レディース
+
+                    -# %selectを削除
+                    -# class: select-defaultを削除
+                  = f.select :category, [["---", ""],["レディース", "0"]]
                   .form-group
                     .form-group
                       %label
@@ -67,9 +80,8 @@
                           必須
                       .select-wrap
                         %i.icon-arrow-bottom
-                        %select{name: 'category', class: 'select-default'}
-                          %option{value: ""} ---
-                          %option{value: "0"} レディース 
+                        -# class: select-defaultを削除
+                        = f.select :category, [["---", ""],["レディース", "0"]]
               .sell-content.clearfix
                 %h3.sell-sub-head
                   配送について
@@ -81,10 +93,9 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      %select{name: 'payer', class: 'select-default'}
-                        %option{value: ""} ---
-                        %option{value: "0"} 送料込み(出品者負担)
-                        %option{value: "1"} 着払い(購入者負担)
+                      -# %selectを削除
+                      -# class: 'select-default'を削除
+                      = f.select :payer, [["---", ""],["送料込み(出品者負担)", "送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"]]
                   .form-group
                     %label
                       発送元の地域
@@ -92,10 +103,9 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      %select{name: 'shippingaddress', class: 'select-default'}
-                        %option{value: ""} ---
-                        %option{value: "0"} 北海道
-                        %option{value: "1"} 青森県
+                      -# %selectを削除
+                      -# class: 'select-default'を削除
+                      = f.select :shippingaddress, [["---", ""],["北海道", "北海道"],["青森県", "青森県"]]
                   .form-group
                     %label
                       発送までの日数
@@ -103,11 +113,7 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      %select{name: 'shippingdate', class: 'select-default'}
-                        %option{value: ""} ---
-                        %option{value: "0"} 1~2日で発送
-                        %option{value: "1"} ２〜３日で発送
-                        %option{value: "2"} 4〜7日で発送
+                      = f.select :shippingdate, [["---", ""],["1~2日で発送", "1~2日で発送"],["２〜３日で発送", "２〜３日で発送"],["4〜7日で発送", "4〜7日で発送"]]
               .sell-content.clearfix
                 %h3.sell-sub-head
                   配送について
@@ -121,7 +127,8 @@
                       .l-right.sell-price-input
                         ¥
                         %div
-                          %input.input-fee{placeholder: "例）300", value: "", name: "price"}/
+                          -# %inputを削除
+                          = f.text_field :price, placeholder: "例）300", value: "", class: "input-fee"
                     %li.clearfix
                       .l-left
                         販売手数料(10%)
@@ -164,6 +171,6 @@
           =link_to "特定商取引法に関する表記", "#", class: 'second'
     =link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?73731125", alt: "mercari", height: "65", width: "80", class: "single-footer-logo"), root_path
     %p
-      %small.third
+      %small.third 
         © Mercari, Inc.
         
