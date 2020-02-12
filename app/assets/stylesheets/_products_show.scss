@@ -6,7 +6,6 @@
   }
   .products {
     background-color: $mainWhiteColor;
-    height: 1300px;
     width: 700px;
     padding: 24px 40px 40px 40px;
     margin: 10px auto;
@@ -22,7 +21,6 @@
     .contents {
       margin: auto;
       margin-top: 10px;
-      height: 420px;
       width: 620px;
       .first_content {
         width: 620px;
@@ -226,5 +224,6 @@
   }
   .footer {
     height: 200px;
+    bottom: 0;
   }
 }
