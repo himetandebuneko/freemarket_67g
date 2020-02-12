@@ -2,9 +2,7 @@ $(document).on('turbolinks:load', function() {
 
   $("#credits_send_btn").on("click",function(e){
     e.preventDefault();
-  
     Payjp.setPublicKey('pk_test_44fcb39a49afbd7cd6794ea7');
-
     var card = {
       number:    $('#number').val(),
       cvc:       $('#cvc').val(),

@@ -1,4 +1,5 @@
 class CreditsController < ApplicationController
+  before_action :authenticate_user!
   
   require 'payjp'
   Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
@@ -24,17 +25,24 @@ class CreditsController < ApplicationController
   end
 
   def show
-    card = Credit.where(user_id: current_user.id).first
-    if credits.blank?
-      redirect_to new_credit_path 
+    card = Credit.find_by(user_id: current_user.id)
+    if card.blank?
+      redirect_to :new_credit_path 
     else
-      customer = Payjp::Customer.retrieve(credit.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @card_information = customer.cards.retrieve(card.card_id)
     end
-    
   end 
 
   def destroy
+    card = Credit.find_by(user_id: current_user.id)
+    if card.blank?
+      redirect_to new_card_path
+    else
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer.delete
+      card.delete
+    end
     
   end
 end
