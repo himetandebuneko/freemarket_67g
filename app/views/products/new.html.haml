@@ -30,7 +30,7 @@
                         = f.fields_for :images do |i|
                           .js-file_group{data: {id: "#{i.index}"}}
                             = i.file_field :image, class: "js-file"
-                            %span.js-remove 
+                            .js-remove 
                           - if @product.persisted?
                             = i.check_box :destroy, data:{ id: image.index }, class: 'hidden-destroy'
                             -# = link_to '編集', "#{edit_product_path}"

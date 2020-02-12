@@ -26,13 +26,13 @@ $(document).on('turbolinks:load', ()=> {
     if (img = $(`img[data-id="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {
-      $('#previews').append(buildImg(targetIndex, blobUrl));
+      $('.sell-upload-items-container').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
       $('#previews').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
-      fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-      
+      fileIndex.push(fileIndex[fileIndex.length - 1] + 1)    
+
     }
   });
 

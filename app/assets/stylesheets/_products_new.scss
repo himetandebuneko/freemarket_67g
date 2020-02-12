@@ -128,15 +128,14 @@ body {
             margin: 16px auto 0;
             .sell-upload-items-container {
               width: 100px;
+              display: flex;
             }
             .sell-upload-items {
               float: left;
-              display: block;
               .preview {
                 width: 100px;
               }
               .sell-upload-items.ul{
-                width: 100%;
                 display: inline;
               }
             }
@@ -174,12 +173,20 @@ body {
                   input {
                     // visibility: hidden;
                     position: absolute;
-                    bottom: -20px;
+                    top: -50px;
+                    left: -50px;
+                  }
+                  .product_images_attributes_1_image {
+                    position: absolute;
+                    top: -50px;
+                    left: -100px;
                   }
                   .js-remove {
-                    position: absolute;
-                    width: 50px;
-                    bottom: -20px;
+                   position: absolute;
+                   margin-left: 30px;
+                   top: -50px;
+                   left: -100px;
+                   width: 50px;
                   }
                 }
               }
