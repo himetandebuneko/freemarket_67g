@@ -44,7 +44,8 @@ class ProductsController < ApplicationController
   end
 
   def confirm
-
+    @product = Product.find(params[:id])
+    @card = Credit.find_by(user_id: current_user.id)
   end
 
 private

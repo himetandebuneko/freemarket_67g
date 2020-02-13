@@ -14,7 +14,7 @@ $(document).on('turbolinks:load', function() {
 
       if (response.error) {
         $('#credits_send_btn').prop('disabled', false);
-        alert("登録できませんでした。");
+        alert("カード情報が不十分のため、登録できませんでした。");
       }
       else {
         $('#number').removeAttr('name');

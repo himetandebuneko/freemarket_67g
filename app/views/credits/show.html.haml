@@ -14,14 +14,14 @@
         .credits_show__main__body
           %ul.credits_show__main__body__top
             %li= image_tag '/credits/visa.svg', height:"15px", wight: "auto", alt: 'visa', class: 'credits_icon'
-            %li= link_to '削除する', '/credits/#{credit.id}', method: :delete, class: 'credits_delete_btn'
+            %li= link_to '削除する', delete_credits_path, method: :post, class: 'credits_delete_btn'
           .credits_show__main__body__middle
             **** **** **** #{@card_information.last4}
           .credits_show__main__body__bottom
             - exp_month = @card_information.exp_month.to_s
             - exp_year = @card_information.exp_year.to_s.last(2)
             = exp_month + ' / ' + exp_year
-        
+                  
         .credits_show__main__footer
           .credits_show__main__footer__about
             = link_to '支払い方法について  >>', '#', class: 'credits_show__main__footer__about__btn'

@@ -1,0 +1,26 @@
+.right_content {
+  .credit_done {
+    font-weight: 600;
+    width: 700px;
+    height: 180px;
+    margin-top: 40px;
+    background-color: $mainWhiteColor;
+    text-align: center;
+    align-items: center;
+    line-height: 100px;
+    &__btn {
+      height: 50px;
+      width: 320px;
+      margin: auto;
+      line-height: 50px;
+      text-align: center;
+      border: 1px solid $mainBlueColor;
+      background-color: $mainBlueColor;
+      .home_btn {
+        font-size: 18px;
+        text-decoration: none;
+        color: $mainWhiteColor;
+      }
+    }
+  }
+}
