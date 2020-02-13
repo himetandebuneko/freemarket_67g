@@ -6,9 +6,18 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @parents = Category.all.order("id ASC").limit(13)
+    @category = Category.where(ancestry: nil).each do |parent|
+    end
     @product = Product.new
     @product.images.build
+  end
+
+  def category_children  
+    @category_children = Category.find(params[:productcategory]).children 
+  end
+
+  def category_grandchildren
+    @category_grandchildren = Category.find(params[:productcategory]).children
   end
 
   

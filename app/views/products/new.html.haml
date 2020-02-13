@@ -54,11 +54,11 @@
                       カテゴリー
                       %span.form-require
                         必須
-                  .select-wrap
-                    %i.icon-arrow-bottom
-                    %select{name: 'category', class: 'select-default'}
-                      %option{value: ""} ---
-                      %option{value: "0"} レディース
+                    %div
+                      .select-wrap
+                        %i.fa.fa-chevron-down
+                        = f.collection_select :category, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+                      .product_select-children
                   .form-group
                     .form-group
                       %label
