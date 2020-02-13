@@ -71,7 +71,17 @@
 
                     -# %selectを削除
                     -# class: select-defaultを削除
-                  = f.select :category, [["---", ""],["レディース", "0"]]
+                    
+                  = f.select :category_id, [["---", ""],["レディース", "1"]], {}, class: "select-default"
+                  .form-group
+                  .select-wrap
+                    %i.icon-arrow-bottom
+                      -# class: select-defaultを削除
+                    %label
+                      サイズ
+                      %span.form-require
+                        必須
+                  = f.select :size, [["---", ""],["S", "1"]], {}, class: "select-default"
                   .form-group
                     .form-group
                       %label
@@ -80,8 +90,10 @@
                           必須
                       .select-wrap
                         %i.icon-arrow-bottom
-                        -# class: select-defaultを削除
-                        = f.select :category, [["---", ""],["レディース", "0"]]
+                        -# %selectを削除
+                        = f.select :condition, [["---", ""],["新品", "1"]], {}, class: "select-default"
+                  .form-group
+      
               .sell-content.clearfix
                 %h3.sell-sub-head
                   配送について
@@ -95,7 +107,8 @@
                       %i.icon-arrow-bottom
                       -# %selectを削除
                       -# class: 'select-default'を削除
-                      = f.select :payer, [["---", ""],["送料込み(出品者負担)", "送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"]]
+                      = f.select :payer, [["---", ""],["送料込み(出品者負担)", "送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"]], {}, class: "select-default"
+                  .form-group
                   .form-group
                     %label
                       発送元の地域
@@ -105,7 +118,8 @@
                       %i.icon-arrow-bottom
                       -# %selectを削除
                       -# class: 'select-default'を削除
-                      = f.select :shippingaddress, [["---", ""],["北海道", "北海道"],["青森県", "青森県"]]
+                      = f.select :shippingaddress, [["---", ""],["北海道", "北海道"],["青森県", "青森県"]], {}, class: "select-default"
+                  .form-group
                   .form-group
                     %label
                       発送までの日数
@@ -113,7 +127,8 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      = f.select :shippingdate, [["---", ""],["1~2日で発送", "1~2日で発送"],["２〜３日で発送", "２〜３日で発送"],["4〜7日で発送", "4〜7日で発送"]]
+                      = f.select :shippingdate, [["---", ""],["1~2日で発送", "1~2日で発送"],["２〜３日で発送", "２〜３日で発送"],["4〜7日で発送", "4〜7日で発送"]], {}, class: "select-default"
+                  .form-group
               .sell-content.clearfix
                 %h3.sell-sub-head
                   配送について
