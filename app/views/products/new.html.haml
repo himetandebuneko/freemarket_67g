@@ -81,7 +81,7 @@
                       サイズ
                       %span.form-require
                         必須
-                  = f.select :size, [["---", ""],["S", "1"]], {}, class: "select-default"
+                  = f.select :size, [["---", ""],["S", "S"]], {}, class: "select-default"
                   .form-group
                     .form-group
                       %label
@@ -91,7 +91,7 @@
                       .select-wrap
                         %i.icon-arrow-bottom
                         -# %selectを削除
-                        = f.select :condition, [["---", ""],["新品", "1"]], {}, class: "select-default"
+                        = f.select :condition, [["---", ""],["新品", "新品"]], {}, class: "select-default"
                   .form-group
       
               .sell-content.clearfix

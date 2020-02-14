@@ -14,20 +14,11 @@ class ProductsController < ApplicationController
   
   def create
     @product = Product.new(product_params)
-    # respond_to do |format|
-      if @product.save
-        # binding.pry
-        # params[:images][:image].each do |image|
-        #   @product.images.create(image: image, product_id: @product.id)
-        redirect_to root_path
-        # end
-        # format.html{redirect_to root_path}
-      else
-        render :new
-        # @product.images.build
-        # format.html{render action: 'new'}
-      end
-    # end
+    if @product.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
   
   def edit
