@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_image
-  before_action :set_product, only:["destroy","show"]
+  before_action :set_product, only:["destroy", "show", "edit"]
 
   def index
     @products = Product.includes(:images).where(buyer: "").limit(10).order('created_at DESC')
@@ -35,10 +35,11 @@ class ProductsController < ApplicationController
   end
   
   def update
-    if @product.update(product_params)
+    product = Product.find(params[:id])
+    if product.update(product_params)
        redirect_to root_path
     else
-      render :edit
+      render action: :index
     end
   end
   
