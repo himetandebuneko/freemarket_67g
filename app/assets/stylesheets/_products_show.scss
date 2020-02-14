@@ -6,7 +6,6 @@
   }
   .products {
     background-color: $mainWhiteColor;
-    height: 1300px;
     width: 700px;
     padding: 24px 40px 40px 40px;
     margin: 10px auto;
@@ -22,7 +21,6 @@
     .contents {
       margin: auto;
       margin-top: 10px;
-      height: 420px;
       width: 620px;
       .first_content {
         width: 620px;
@@ -70,6 +68,22 @@
         text-align: center;
         margin: 30px 0;
         .buy_btn {
+          color: $mainWhiteColor;
+          font-size: 24px;
+          text-decoration: none;
+        }
+        .not_buy-btn {
+          color: $mainWhiteColor;
+          background-color: $mainGrayColor;
+          font-size: 24px;
+          text-decoration: none;
+        }
+        .delete-btn {
+          color: $mainWhiteColor;
+          background-color: red;
+          text-decoration: none;
+        }
+        a.delete {
           color: $mainWhiteColor;
           font-size: 24px;
           text-decoration: none;
@@ -164,6 +178,7 @@
         height: 82px;
         width: 620px;
         padding: 10px;
+        border: 1px solid $mainGrayColor;
       }
       .text_note {
         font-size: 14px;
@@ -209,5 +224,6 @@
   }
   .footer {
     height: 200px;
+    bottom: 0;
   }
 }
