@@ -5,7 +5,7 @@
     .edit-products__name
       = @product.name
     .edit-contents
-      = form_with model: @product , local: true do |f|
+      = form_with model: @product, local: true do |f|
         .edit-first_content
           -# = @product.images.image
           .edit-first_content_image= image_tag '/yakiniku.jpg', alt: "test", id: 'image1'
