@@ -67,7 +67,7 @@
                           必須
                       .select-wrap
                         %i.icon-arrow-bottom
-                        = f.collection_select :status_id, Status.all, :id, :name, prompt: "--", class: 'select-default'
+                        = f.collection_select :condition_id, Condition.all, :id, :name, prompt: "--", class: 'select-default'
               .sell-content.clearfix
                 %h3.sell-sub-head
                   配送について
@@ -79,7 +79,7 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      = f.collection_select :fee_id, Fee.all, :id, :name, prompt: "--", class: 'select-default'
+                      = f.collection_select :payer_id, Payer.all, :id, :name, prompt: "--", class: 'select-default'
                   .form-group
                     %label
                       発送元の地域
@@ -95,7 +95,7 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      = f.collection_select :day_id, Day.all, :id, :name, prompt: "--", class: 'select-default'
+                      = f.collection_select :shippingdate_id, Shippingdate.all, :id, :name, prompt: "--", class: 'select-default'
               .sell-content.clearfix
                 %h3.sell-sub-head
                   配送について
