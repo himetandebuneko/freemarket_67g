@@ -54,8 +54,6 @@
     - @products[0..4].each do |product|
       .first__contents
         .first__contents__box
-          .first__contents__header
-            %span
           .first__contents__content
             .first__contents__content__img
             = product.name
@@ -66,7 +64,7 @@
             .first__contents__header__name
             .first__contents__header__more
   .first
-    - @products[5..9].each do |product|
+    -# - @products[5..9].each do |product|
       .first__contents
         .first__contents__box
           .first__contents__header
