@@ -67,24 +67,19 @@
                           必須
                       .select-wrap
                         %i.icon-arrow-bottom
-                        %select{name: 'category', class: 'select-default'}
-                          %option{value: ""} ---
-                          %option{value: "0"} レディース 
+                        = f.collection_select :status_id, Status.all, :id, :name, prompt: "--", class: 'select-default'
               .sell-content.clearfix
                 %h3.sell-sub-head
                   配送について
                 .sell-form-box
                   .form-group
                     %label
-                      配送量の負担
+                      配送料の負担
                       %span.form-require
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      %select{name: 'payer', class: 'select-default'}
-                        %option{value: ""} ---
-                        %option{value: "0"} 送料込み(出品者負担)
-                        %option{value: "1"} 着払い(購入者負担)
+                      = f.collection_select :fee_id, Fee.all, :id, :name, prompt: "--", class: 'select-default'
                   .form-group
                     %label
                       発送元の地域
@@ -100,11 +95,7 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      %select{name: 'shippingdate', class: 'select-default'}
-                        %option{value: ""} ---
-                        %option{value: "0"} 1~2日で発送
-                        %option{value: "1"} ２〜３日で発送
-                        %option{value: "2"} 4〜7日で発送
+                      = f.collection_select :day_id, Day.all, :id, :name, prompt: "--", class: 'select-default'
               .sell-content.clearfix
                 %h3.sell-sub-head
                   配送について
