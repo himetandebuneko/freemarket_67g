@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_image
   def index
-    @product = Product.where(buyer: "").limit(10).order('created_at DESC')
+    @products = Product.includes(:images).where(buyer: "").limit(10).order('created_at DESC')
   end
 
   def new
