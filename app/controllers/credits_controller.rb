@@ -1,16 +1,10 @@
 class CreditsController < ApplicationController
-  before_action :authenticate_user!
 
   require 'payjp'
   Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_SECRET_KEY]
           
   def new
-    card = Credit.find_by(user_id: current_user.id)
-    if card.blank?
-    else
-      redirect_to root_path
-    end
-   
+    
   end
 
   def create  
@@ -25,7 +19,7 @@ class CreditsController < ApplicationController
       if @credit.save
         redirect_to user_path(id: current_user.id)
       else
-        redirect_to new_credit_path, notice: "カード情報が不十分です。"
+        render new_credit_path
       end
     end
   end
@@ -55,18 +49,21 @@ class CreditsController < ApplicationController
   def pay
     card = Credit.find_by(user_id: current_user.id)
     @product = Product.find(1)
-
-    Payjp::Charge.create(
-    amount: @product.price,
-    customer: card.customer_id,
-    currency: 'jpy'
-    )
-    if @product.update(status: 1, buyer: current_user.id)
-      redirect_to action: 'done'
-      flash[:notice] = '購入しました。'
+    if card.blank?
+      redirect_to new_credits_path, alert: 'ERROR!!'
     else
-      flash[:alert] = '購入に失敗しました。'
-      redirect_to root_path
+      Payjp::Charge.create(
+      amount: @product.price,
+      customer: card.customer_id,
+      currency: 'jpy'
+      )
+      if @product.update(status: 1, buyer: current_user.id)
+        redirect_to action: 'done'
+        flash[:notice] = '購入しました。'
+      else
+        flash[:alert] = '購入に失敗しました。'
+        redirect_to root_path
+      end
     end
   end
 
