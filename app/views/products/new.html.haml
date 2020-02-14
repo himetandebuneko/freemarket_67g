@@ -57,7 +57,7 @@
                     %div
                       .select-wrap
                         %i.fa.fa-chevron-down
-                        = f.collection_select :category, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+                        = f.collection_select :category_id, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
                       .product_select-children
                   .form-group
                     .form-group
@@ -67,7 +67,7 @@
                           必須
                       .select-wrap
                         %i.icon-arrow-bottom
-                        = f.collection_select :condition_id, Condition.all, :id, :name, prompt: "--", class: 'select-default'
+                        = f.collection_select :condition, Condition.all, :id, :name, prompt: "--", class: 'select-default'
               .sell-content.clearfix
                 %h3.sell-sub-head
                   配送について
@@ -79,7 +79,7 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      = f.collection_select :payer_id, Payer.all, :id, :name, prompt: "--", class: 'select-default'
+                      = f.collection_select :payer, Payer.all, :id, :name, prompt: "--", class: 'select-default'
                   .form-group
                     %label
                       発送元の地域
@@ -87,7 +87,7 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'select-default'
+                      = f.collection_select :prefecture, Prefecture.all, :id, :name, prompt: "--", class: 'select-default'
                   .form-group
                     %label
                       発送までの日数
@@ -95,7 +95,7 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      = f.collection_select :shippingdate_id, Shippingdate.all, :id, :name, prompt: "--", class: 'select-default'
+                      = f.collection_select :shippingdate, Shippingdate.all, :id, :name, prompt: "--", class: 'select-default'
               .sell-content.clearfix
                 %h3.sell-sub-head
                   配送について
