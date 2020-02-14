@@ -112,8 +112,7 @@
                     .select-wrap
                       %i.icon-arrow-bottom
 
-                      = f.collection_select :shippingaddress, Prefecture.all, :id, :name, prompt: "--", class: 'select-default'
-                      
+                      = f.collection_select :shippingaddress, Shippingaddress.all, :id, :name, prompt: "--", class: 'select-default'
                   .form-group
                     %label
                       発送までの日数
