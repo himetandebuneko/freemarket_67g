@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_14_042306) do
+ActiveRecord::Schema.define(version: 2020_02_14_085110) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -47,14 +47,14 @@ ActiveRecord::Schema.define(version: 2020_02_14_042306) do
   end
 
   create_table "deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "day_id"
-    t.string "day"
-    t.integer "fee_id"
-    t.string "fee"
+    t.integer "condition_id"
+    t.string "condition"
+    t.integer "shippingdate_id"
+    t.string "shippingdate"
+    t.integer "payer_id"
+    t.string "payer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "status_id"
-    t.string "status"
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -84,7 +84,6 @@ ActiveRecord::Schema.define(version: 2020_02_14_042306) do
     t.string "shippingdate", null: false
     t.string "buyer", null: false
     t.string "seller", null: false
-    t.string "status"
     t.bigint "user_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
@@ -110,6 +109,8 @@ ActiveRecord::Schema.define(version: 2020_02_14_042306) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "comments", "products"

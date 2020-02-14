@@ -1,6 +1,6 @@
 class Delivery < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :day
-  belongs_to_active_hash :fee
-  belongs_to_active_hash :status
+  belongs_to_active_hash :shippingdate
+  belongs_to_active_hash :payer
+  belongs_to_active_hash :condition
 end
