@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
     if product.update(product_params)
        redirect_to root_path
     else
-      render action: :index
+      redirect_back(fallback_location: root_path)
     end
   end
   
