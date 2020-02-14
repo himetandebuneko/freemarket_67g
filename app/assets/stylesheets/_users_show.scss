@@ -84,13 +84,14 @@
       &_info {
         position: relative;
         background-color: #eee;
-        width: 700px;
+        width: 660px;
         height: 160px;
         padding: 20px;
         text-align: center;
         &__name {
           color: $fontColor;
           text-decoration: none;
+          margin-bottom: 10px;
         }
         &__products {
           display: flex;

@@ -3,14 +3,22 @@ class ProductsController < ApplicationController
   before_action :set_product, only:["destroy", "show", "edit"]
 
   def index
-    @products = Product.last(10)
-    @products = Product.includes(:images).order('created_at DESC')
+    @products = Product.includes(:images).where(buyer: "").limit(10).order('created_at DESC')
   end
 
   def new
-    @parents = Category.all.order("id ASC").limit(13)
+    @category = Category.where(ancestry: nil).each do |parent|
+    end
     @product = Product.new
     @product.images.build
+  end
+
+  def category_children  
+    @category_children = Category.find(params[:productcategory]).children 
+  end
+
+  def category_grandchildren
+    @category_grandchildren = Category.find(params[:productcategory]).children
   end
 
   
@@ -50,7 +58,8 @@ class ProductsController < ApplicationController
   end
 
   def confirm
-
+    @product = Product.find(params[:id])
+    @card = Credit.find_by(user_id: current_user.id)
   end
 
   def show
