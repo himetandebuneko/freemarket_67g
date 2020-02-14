@@ -92,10 +92,7 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      %select{name: 'shippingaddress', class: 'select-default'}
-                        %option{value: ""} ---
-                        %option{value: "0"} 北海道
-                        %option{value: "1"} 青森県
+                      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "--", class: 'select-default'
                   .form-group
                     %label
                       発送までの日数
