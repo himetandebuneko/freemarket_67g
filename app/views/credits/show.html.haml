@@ -14,7 +14,7 @@
         .credits_show__main__body
           %ul.credits_show__main__body__top
             %li= image_tag '/credits/visa.svg', height:"15px", wight: "auto", alt: 'visa', class: 'credits_icon'
-            %li= link_to '削除する', delete_credits_path, method: :post, class: 'credits_delete_btn'
+            %li= link_to '削除する', delete_credit_path, method: :post, class: 'credits_delete_btn'
           .credits_show__main__body__middle
             **** **** **** #{@card_information.last4}
           .credits_show__main__body__bottom

@@ -48,7 +48,7 @@ class CreditsController < ApplicationController
 
   def pay
     card = Credit.find_by(user_id: current_user.id)
-    @product = Product.find(1)
+    @product = Product.find(params[:id])
     if card.blank?
       redirect_to new_credits_path, alert: 'ERROR!!'
     else
