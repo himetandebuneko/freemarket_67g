@@ -1,0 +1,79 @@
+.edit-preview
+  .edit-header
+    部分テンプレート
+  .edit-products
+    .edit-products__name
+      = @product.name
+    .edit-contents
+      = form_with model: @product , local: true do |f|
+        .edit-first_content
+          -# = @product.images.image
+          .edit-first_content_image= image_tag '/yakiniku.jpg', alt: "test", id: 'image1'
+          %ul.edit-sub_image 
+            %li= image_tag '/yakiniku.jpg', alt: "test1", class: 'image1'
+            %li= image_tag '/images.jpg', alt: "test2", class: 'image2'
+            %li= image_tag '/images2.jpg', alt: "test3", class: 'image3'
+            %li= image_tag '/images3.jpg', alt: "test4", class: 'image4'
+        .edit-second_content
+          .edit-products_info
+            %table
+              %tr
+                %th
+                  価格
+                %td
+                  = f.number_field :price, class:'price-box'
+                  円 (税込)
+                  .fas.fa-pen
+              %tr
+                %th
+                  商品名
+                %td
+                  = f.text_field :name, class:'name-box'
+                  .fas.fa-pen
+              %tr
+                %th
+                  カテゴリー
+                %td
+                  = f.select :category, Category.all.map { |category| [category.name] }, class:'category-box1'
+                  = f.select :category, Category.all.map { |category| [category.name] }, class:'category-box2'
+                  = f.select :category, Category.all.map { |category| [category.name] }, class:'category-box3'
+              %tr
+                %th
+                  商品のサイズ
+                %td
+                  = f.text_field :size, class:'size-box'
+                  .fas.fa-pen
+              %tr
+                %th
+                  商品の状態
+                %td
+                  = f.text_field :condition, class:'status-box'
+                  .fas.fa-pen
+              %tr
+                %th
+                  配送料の負担
+                %td
+                  = f.text_field :payer, class:'payer-box'
+                  .fas.fa-pen
+              %tr
+                %th
+                  発送元地域
+                %td
+                  = f.text_field :shippingaddress, class:'shippingaddress-box'
+                  .fas.fa-pen
+              %tr
+                %th
+                  配送状態
+                %td
+                  = f.text_field :status, class:'status-box'
+                  .fas.fa-pen
+              %tr
+                %th
+                  発送予定日数
+                %td
+                  = f.text_field :shippingdate, class:'shippingdate-box'
+                  .fas.fa-pen
+            .edit-done1
+              = f.submit '編集を完了する', class: 'edit-done2'
+  .edit-footer
+    部分テンプレート

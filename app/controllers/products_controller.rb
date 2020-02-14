@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_image
-  before_action :set_product, only:["destroy","show"]
+  before_action :set_product, only:["destroy", "show", "edit"]
 
   def index
     @products = Product.last(10)
@@ -33,10 +33,11 @@ class ProductsController < ApplicationController
   end
   
   def update
-    if @product.update(product_params)
+    product = Product.find(params[:id])
+    if product.update(product_params)
        redirect_to root_path
     else
-      render :edit
+      render action: :index
     end
   end
   
@@ -58,7 +59,7 @@ class ProductsController < ApplicationController
 private
 
   def product_params
-    params.require(:product).permit(:name, :detail, :size, :price, :condition, :shippingaddress, :shippingdate,  images_attributes: [:image, :_destroy, :id])
+    params.require(:product).permit(:name, :detail, :size, :price, :condition, :shippingaddress, :shippingdate, images_attributes: [:image, :_destroy, :id])
   end
 
   def set_product
