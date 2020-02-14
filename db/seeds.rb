@@ -8,12 +8,12 @@
 
 
 # coding: utf-8
-# User.create!(id: 2, nickname: "あいうえお", email: "1aaa@aaa", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
-# User.create!(id: 3, nickname: "あいうえお", email: "bbb@bbb", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
-# User.create!(id: 4, nickname: "あいうえお", email: "ccc@ccc", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
-# User.create!(id: 5, nickname: "あいうえお", email: "ddd@ddd", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
-# User.create!(id: 6, nickname: "あいうえお", email: "eee@eee", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
-# User.create!(id: 7, nickname: "あいうえお", email: "fff@fff", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
+User.create!(id: 2, nickname: "あいうえお", email: "1aaa@aaa", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
+User.create!(id: 3, nickname: "あいうえお", email: "bbb@bbb", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
+User.create!(id: 4, nickname: "あいうえお", email: "ccc@ccc", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
+User.create!(id: 5, nickname: "あいうえお", email: "ddd@ddd", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
+User.create!(id: 6, nickname: "あいうえお", email: "eee@eee", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
+User.create!(id: 7, nickname: "あいうえお", email: "fff@fff", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
 
 
 
@@ -347,9 +347,11 @@ others_9 = others.children.create(name: "その他")
 others_9.children.create([{name: "すべて"}])
 
 
-Product.create!(id: 1, name: "GU ロングテープベルト", detail: "最高の商品です", size: "S", price: 1000, condition: "新品", shippingaddress: "東京都", shippingdate: "2019-05-01", buyer: "佐藤愛子", seller: "加藤紀子", user_id: 1, category_id: 1, created_at: "2019-03-01", updated_at: "2019-03-02")
-Product.create!(id: 2, name: "minplume リボンまみれワンピース", detail: "オススメです", size: "M", price: 2000, condition: "新品", shippingaddress: "大阪府", shippingdate: "2019-06-01", buyer: "金子浩二", seller: "武田登", user_id: 2, category_id: 2, created_at: "2019-03-05", updated_at: "2019-03-09")
-Product.create!(id: 3, name: "マリクレール時計", detail: "まあまあ", size: "L", price: 5000, condition: "中古", shippingaddress: "秋田県", shippingdate: "2019-06-01", buyer: "秋元達司", seller: "山本武", user_id: 3, category_id: 3, created_at: "2019-03-01", updated_at: "2019-08-02")
-Product.create!(id: 4, name: "bonfantiトートバッグ", detail: "最高", size: "S", price: 20000, condition: "新品", shippingaddress: "北海道", shippingdate: "2019-06-08", buyer: "酒井道", seller: "椎名順", user_id: 4, category_id: 4, created_at: "2020-03-01", updated_at: "2029-05-01")
-Product.create!(id: 5, name: "メンズシャツ", detail: "すごい", size: "L", price: 450, condition: "中古", shippingaddress: "滋賀県", shippingdate: "2017-05-03", buyer: "山田太郎", seller: "八代龍", user_id: 5, category_id: 5, created_at: "2015-08-14", updated_at: "2015-08-20")
-Product.create!(id: 6, name: "ショルダーバッグ", detail: "超絶良い商品です。早い者勝ち", size: "L", price: 2850, condition: "新品", shippingaddress: "沖縄県", shippingdate: "2017-05-03", buyer: "滝本隼人", seller: "宍戸太郎", user_id: 6, category_id: 6, created_at: "2019-12-07", updated_at: "2020-09-07")
+
+Product.create!(id: 1, name: "GU ロングテープベルト", detail: "最高の商品です", size: "S", price: 1000, status: "未", condition: "新品", shippingaddress: "東京都", shippingdate: "2019-05-01", buyer: "佐藤愛子", seller: "加藤紀子",  payer: "", user_id: 1, category_id: 1, created_at: "2019-03-01", updated_at: "2019-03-02")
+Product.create!(id: 2, name: "minplume リボンまみれワンピース", detail: "オススメです", size: "M", price: 2000, status: "未", condition: "新品", shippingaddress: "大阪府", shippingdate: "2019-06-01", buyer: "金子浩二", seller: "武田登", payer: "", user_id: 2, category_id: 2, created_at: "2019-03-05", updated_at: "2019-03-09")
+Product.create!(id: 3, name: "マリクレール時計", detail: "まあまあ", size: "L", price: 5000, status: "済", condition: "中古", shippingaddress: "秋田県", shippingdate: "2019-06-01", buyer: "秋元達司", seller: "山本武", payer: "", user_id: 3, category_id: 3, created_at: "2019-03-01", updated_at: "2019-08-02")
+Product.create!(id: 4, name: "bonfantiトートバッグ", detail: "最高", size: "S", price: 20000, status: "未", condition: "新品", shippingaddress: "北海道", shippingdate: "2019-06-08", buyer: "酒井道", seller: "椎名順", payer: "", user_id: 4, category_id: 4, created_at: "2020-03-01", updated_at: "2029-05-01")
+Product.create!(id: 5, name: "メンズシャツ", detail: "すごい", size: "L", price: 450, status: "済", condition: "中古", shippingaddress: "滋賀県", shippingdate: "2017-05-03", buyer: "山田太郎", seller: "八代龍", payer: "", user_id: 5, category_id: 5, created_at: "2015-08-14", updated_at: "2015-08-20")
+Product.create!(id: 6, name: "ショルダーバッグ", detail: "超絶良い商品です。早い者勝ち", size: "L", price: 2850, status: "未", condition: "新品", shippingaddress: "沖縄県", shippingdate: "2017-05-03", buyer: "滝本隼人", seller: "宍戸太郎", payer: "", user_id: 6, category_id: 6, created_at: "2019-12-07", updated_at: "2020-09-07")
+

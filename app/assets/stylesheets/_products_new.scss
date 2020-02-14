@@ -123,14 +123,19 @@ body {
             line-height: 1.5;
           }
           .sell-dropbox-container {
-            display: block;
+            display: inline;
             width: 620px;
             margin: 16px auto 0;
+            .sell-upload-items-container {
+              width: 100px;
+              display: flex;
+            }
             .sell-upload-items {
               float: left;
-              display: block;
+              .preview {
+                width: 100px;
+              }
               .sell-upload-items.ul{
-                width: 100%;
                 display: inline;
               }
             }
@@ -154,6 +159,38 @@ body {
             cursor: pointer;
             float: right;
             margin-left: 2%;
+            #image-box {
+              width: 100px;
+              height: 162px;
+              #previews {
+                display: flex;
+                width: 100px;
+                height: 162px;
+                .js-file_group {
+                  position: relative;
+                  width: 100px;
+                  height: 100px;
+                  input {
+                    // visibility: hidden;
+                    position: absolute;
+                    top: -50px;
+                    left: -50px;
+                  }
+                  .product_images_attributes_1_image {
+                    position: absolute;
+                    top: -50px;
+                    left: -100px;
+                  }
+                  .js-remove {
+                   position: absolute;
+                   margin-left: 30px;
+                   top: -50px;
+                   left: -100px;
+                   width: 50px;
+                  }
+                }
+              }
+            }
             .sell-upload-drop-box pre {
               position: absolute;
               top: 50%;
