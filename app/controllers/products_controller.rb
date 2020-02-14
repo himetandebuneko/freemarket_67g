@@ -3,8 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only:["destroy","show"]
 
   def index
-    @products = Product.last(10)
-    @products = Product.includes(:images).order('created_at DESC')
+    @products = Product.includes(:images).where(buyer: "").limit(10).order('created_at DESC')
   end
 
   def new
@@ -58,7 +57,8 @@ class ProductsController < ApplicationController
   end
 
   def confirm
-
+    @product = Product.find(params[:id])
+    @card = Credit.find_by(user_id: current_user.id)
   end
 
   def show
