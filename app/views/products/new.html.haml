@@ -66,22 +66,19 @@
                       カテゴリー
                       %span.form-require
                         必須
-                  .select-wrap
-                    %i.icon-arrow-bottom
 
-                    -# %selectを削除
-                    -# class: select-defaultを削除
-                    
-                  = f.select :category_id, [["---", ""],["レディース", "1"]], {}, class: "select-default"
-                  .form-group
-                  .select-wrap
-                    %i.icon-arrow-bottom
-                      -# class: select-defaultを削除
                     %label
                       サイズ
                       %span.form-require
                         必須
                   = f.select :size, [["---", ""],["S", "S"]], {}, class: "select-default"
+
+                    %div
+                      .select-wrap
+                        %i.fa.fa-chevron-down
+                        = f.collection_select :category_id, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+                      .product_select-children
+                      
                   .form-group
                     .form-group
                       %label
@@ -90,25 +87,23 @@
                           必須
                       .select-wrap
                         %i.icon-arrow-bottom
-                        -# %selectを削除
-                        = f.select :condition, [["---", ""],["新品", "新品"]], {}, class: "select-default"
-                  .form-group
-      
+
+                        = f.collection_select :condition, Condition.all, :id, :name, prompt: "--", class: 'select-default'
+
               .sell-content.clearfix
                 %h3.sell-sub-head
                   配送について
                 .sell-form-box
                   .form-group
                     %label
-                      配送量の負担
+                      配送料の負担
                       %span.form-require
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      -# %selectを削除
-                      -# class: 'select-default'を削除
-                      = f.select :payer, [["---", ""],["送料込み(出品者負担)", "送料込み(出品者負担)"],["着払い(購入者負担)", "着払い(購入者負担)"]], {}, class: "select-default"
-                  .form-group
+
+                      = f.collection_select :payer, Payer.all, :id, :name, prompt: "--", class: 'select-default'
+
                   .form-group
                     %label
                       発送元の地域
@@ -116,10 +111,9 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      -# %selectを削除
-                      -# class: 'select-default'を削除
-                      = f.select :shippingaddress, [["---", ""],["北海道", "北海道"],["青森県", "青森県"]], {}, class: "select-default"
-                  .form-group
+
+                      = f.collection_select :shippingaddress, Prefecture.all, :id, :name, prompt: "--", class: 'select-default'
+                      
                   .form-group
                     %label
                       発送までの日数
@@ -127,8 +121,9 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      = f.select :shippingdate, [["---", ""],["1~2日で発送", "1~2日で発送"],["２〜３日で発送", "２〜３日で発送"],["4〜7日で発送", "4〜7日で発送"]], {}, class: "select-default"
-                  .form-group
+
+                      = f.collection_select :shippingdate, Shippingdate.all, :id, :name, prompt: "--", class: 'select-default'
+                      
               .sell-content.clearfix
                 %h3.sell-sub-head
                   配送について

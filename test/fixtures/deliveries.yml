@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  condition_id: 1
+  condition: MyString
+  shippingdate_id: 1
+  shippingdate: MyString
+  payer_id: 1
+  payer: MyString
+
+two:
+  condition_id: 1
+  condition: MyString
+  shippingdate_id: 1
+  shippingdate: MyString
+  payer_id: 1
+  payer: MyString

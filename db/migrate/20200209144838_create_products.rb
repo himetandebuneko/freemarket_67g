@@ -12,6 +12,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :buyer
       t.string :seller
       t.string :payer
+
       t.references :user, null: false, foreign_key: true
       t.references :category, null: false, foreign_key: true
       t.timestamps
