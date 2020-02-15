@@ -9,7 +9,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :condition, null: false
       t.string :shippingaddress, null: false
       t.string :shippingdate, null: false
-      t.string :buyer
+      t.string :buyer, default: ""
       t.string :seller
       t.string :payer
 
