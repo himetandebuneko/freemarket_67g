@@ -16,7 +16,7 @@ class Product < ApplicationRecord
   validates :shippingdate, presence: true
   validates :user_id, presence: true
   validates :category_id, presence: true
-  validates :images, presence: true
+  # validates :images, presence: true
   
 
   accepts_nested_attributes_for :images, allow_destroy: true
