@@ -8,13 +8,13 @@
 
 
 # coding: utf-8
-User.create!(id: 1, nickname: "あいうえお", email: "aaa@aaa", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
-User.create!(id: 2, nickname: "あいうえお", email: "1aaa@aaa", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
-User.create!(id: 3, nickname: "あいうえお", email: "bbb@bbb", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
-User.create!(id: 4, nickname: "あいうえお", email: "ccc@ccc", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
-User.create!(id: 5, nickname: "あいうえお", email: "ddd@ddd", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
-User.create!(id: 6, nickname: "あいうえお", email: "eee@eee", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
-User.create!(id: 7, nickname: "あいうえお", email: "fff@fff", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
+# User.create!(id: 1, nickname: "あいうえお", email: "aaa@aaa", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
+# User.create!(id: 2, nickname: "あいうえお", email: "1aaa@aaa", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
+# User.create!(id: 3, nickname: "あいうえお", email: "bbb@bbb", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
+# User.create!(id: 4, nickname: "あいうえお", email: "ccc@ccc", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
+# User.create!(id: 5, nickname: "あいうえお", email: "ddd@ddd", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
+# User.create!(id: 6, nickname: "あいうえお", email: "eee@eee", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
+# User.create!(id: 7, nickname: "あいうえお", email: "fff@fff", password: 11111111, lastname: "あいうえお", firstname: "かきくけこ", lastnamekana: "あいうえお", firstnamekana: "かきくけこ", birthday: "2020-10-10", encrypted_password: "11111111")
 
 
 
