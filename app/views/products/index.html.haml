@@ -51,15 +51,16 @@
   %li レディース新着アイテム
   = link_to "もっと見る ＞","#", class:"more"
   .first
-    - @products[0..4].each do |product|
+    - @product[0..4].each do |product|
       .first__contents
         .first__contents__box
           .first__contents__content
             .first__contents__content__img
+            = image_tag product.images[0].image_url
             = product.name
           .first__contents__price-box
             .first__contents__box
-              = product.price
+              = "#{product.price}円"
           .first__contents__header
             .first__contents__header__name
             .first__contents__header__more
@@ -71,6 +72,7 @@
             %span
           .first__contents__content
             .first__contents__content__img
+            = image_tag product.images[0].image_url
             = product.name
           .first__contents__price-box
             .first__contents__box
