@@ -67,17 +67,17 @@
                       %span.form-require
                         必須
 
-                    %label
-                      サイズ
-                      %span.form-require
-                        必須
-                  = f.select :size, [["---", ""],["S", "S"]], {}, class: "select-default"
 
                     %div
                       .select-wrap
                         %i.fa.fa-chevron-down
                         = f.collection_select :category_id, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
                       .product_select-children
+                    %label
+                      サイズ
+                      %span.form-require
+                        必須
+                    = f.select :size, [["---", ""],["S", "S"]], {}, class: "select-default"
                       
                   .form-group
                     .form-group
@@ -136,7 +136,6 @@
                       .l-right.sell-price-input
                         ¥
                         %div
-                          -# %inputを削除
                           = f.text_field :price, placeholder: "例）300", value: "", class: "input-fee"
                     %li.clearfix
                       .l-left
