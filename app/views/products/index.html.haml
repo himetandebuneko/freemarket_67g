@@ -40,6 +40,7 @@
   -# .google-link
   -# = link_to "#" do
   -#   = image_tag "/link/en_badge_web_generic.png", class:"google_image", alt:""
+
 .main
   .main__top
     .main__top__header
@@ -48,44 +49,44 @@
       %li レディース
       %li メンズ
       %li 家電・スマホ
-  %li レディース新着アイテム
+
+  %h3 レディース新着アイテム
   = link_to "もっと見る ＞","#", class:"more"
   .first
     - @product[0..4].each do |product|
       .first__contents
         .first__contents__box
-          .first__contents__content
-            .first__contents__content__img
+          = link_to '', product_path(product.id), class: 'first__contents__box__link'
+          .first__contents__box__img
             = image_tag product.images[0].image_url
+          .first__contents__box__name
             = product.name
-          .first__contents__price-box
-            .first__contents__box
-              = "#{product.price}円"
+          .first__contents__box__price
+            = "#{product.price}円"
           .first__contents__header
             .first__contents__header__name
             .first__contents__header__more
+  
   .first
     -# - @products[5..9].each do |product|
       .first__contents
         .first__contents__box
-          .first__contents__header
-            %span
-          .first__contents__content
-            .first__contents__content__img
+          = link_to '', product_path(product.id), class: 'first__contents__box__link'
+          .first__contents__box__img
             = image_tag product.images[0].image_url
+          .first__contents__box__name
             = product.name
-          .first__contents__price-box
-            .first__contents__box
-              = product.price
+          .first__contents__box__price
+            = product.price
+            円
           .first__contents__header
             .first__contents__header__name
             .first__contents__header__more
 
+  %h3 メンズ新着アイテム
+  = link_to "もっと見る ＞","#", class:"more"
   .second__contents
     .second__contents__header
-      %li メンズ新着アイテム
-      %span
-      = link_to "もっと見る ＞","#", class:"more"
     .second__contents__content
       .second__contents__content__img
       .second__contents__content__text-box
@@ -94,11 +95,12 @@
         .second__contents__header
           .second__contents__header__name
           .second__contents__header__more
+
+
+  %h3 家電・スマホ新着アイテム
+  = link_to "もっと見る ＞","#", class:"more"
   .main__contents
     .main__contents__header
-      %li 家電・スマホ新着アイテム
-      %span
-      = link_to "もっと見る ＞","#", class:"more"
     .main__contents__content
       .main__contents__content__img
       .main__contents__content__text-box
@@ -107,6 +109,8 @@
         .main__contents__header
           .main__contents__header__name
           .main__contents__header__more
+
+
 .footer
   .footer__nav
     %h2 スマホでかんたんフリマアプリ
@@ -159,5 +163,5 @@
     %span ©︎ 2020,Furima,Inc.
 .purchase-btn
   %li 出品
-  = link_to "#" do
-    %i.fas.fa-camera
+  = link_to "", new_product_path, class: "adada"
+  .fas.fa-camera
