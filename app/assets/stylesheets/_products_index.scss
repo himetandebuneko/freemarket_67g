@@ -1,7 +1,9 @@
 //ヘッダー
 .header {
+  height: 150px;
   padding: 0 60px;
   background-color: white; 
+  
   &__top {
     justify-content: space-between;
     display: flex;
@@ -77,30 +79,37 @@
       &__categories {
         display: flex;
         .btn-registration{
+          width: 110px;
+          font-size: 14px;
+          text-align: center;
           background-color: $mainBlueColor;
           color: rgb(255,255,255);
           display: block;
-          font-size: 14px;
           border: 1px solid $mainBlueColor;
           border-radius: 4px;
           padding: 4px 8px;
         }
         .btn-login {
+          width: 110px;
+          font-size: 14px;
           display: block;
+          text-align: center;
           line-height: 26px;
           text-align: center;
-          color: #00b7ce;
+          color: $mainBlueColor;
           margin:  0 6px;
           border: 1px solid $mainBlueColor;
           border-radius: 4px;
-          padding: 10px 10px;
+          padding: 10px;
           background: rgb(255,255,255);
         }
         .about-furima {
+          width: 110px;
           background-color: rgb(234,53,45);
           color: rgb(255,255,255);
           display: block;
           font-size: 14px;
+          text-align: center;
           border-width: 1px solid rgb(234,53,45);
           border-radius: 4px;
           padding: 4px 8px;
@@ -122,7 +131,7 @@
 .nav {
   position: relative;
   background-size: cover;
-  margin: 100px;
+  margin: 50px 100px;
   .slick-prev {
     visibility:hidden;
   }
@@ -135,15 +144,15 @@
     width: 76px;
     bottom: 20px;
     }
+  }
+  .apple-link {
     .google_image{
     }
-  }
-  .google-link {
   }
 }
 
 .main {
-  margin: 40px;
+  margin: 0 100px 50px;
   &__top {
     height: 200px;
     position: relative;

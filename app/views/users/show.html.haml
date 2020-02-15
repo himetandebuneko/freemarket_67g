@@ -1,5 +1,5 @@
 .header
-  部分テンプレート
+  = render 'products/header'
 .body
   .left_content
     = render partial: 'sidebar'
@@ -9,6 +9,7 @@
       .user_info
         %h2.user_info__name
           = current_user.nickname
+          さん
         %ul.user_info__products
           %li.user_info__products__status 評価0
           %li.user_info__products__length 出品数
@@ -18,11 +19,11 @@
           %li やることリスト
         .area
           %ul.show
-            = link_to 'あれやこれや','#', class: 'topic'
+            = link_to 'ニュース','#', class: 'topic'
             = link_to '一覧表示','#', class: 'all'
 
           %ul
-            = link_to 'あれや','#', class: 'todo'
+            = link_to 'やること','#', class: 'todo'
             = link_to '一覧表示','#', class: 'all'
 
     .products
@@ -36,6 +37,6 @@
             = link_to 'カバン','#', class: 'deal'
             
           %ul
-            = link_to 'あれや','#', class: 'past'
+            = link_to '靴','#', class: 'past'
 .footer
-  部分テンプレート
+  = render 'products/footer'
