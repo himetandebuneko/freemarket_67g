@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2020_02_14_102438) do
     t.string "condition", null: false
     t.string "shippingaddress", null: false
     t.string "shippingdate", null: false
-    t.string "buyer"
+    t.string "buyer", default: ""
     t.string "seller"
     t.string "payer"
     t.bigint "user_id", null: false
