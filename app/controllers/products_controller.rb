@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only:["destroy","show"]
 
   def index
+    @product = Product.last(10)
     @products = Product.includes(:images).where(buyer: "").limit(10).order('created_at DESC')
   end
 
