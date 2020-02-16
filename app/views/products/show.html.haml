@@ -7,13 +7,12 @@
     .contents
       
       .first_content
-        -# = @products.images.image
-        .first_content_image= image_tag '/yakiniku.jpg', alt: "test", id: 'image1'
-        %ul.sub_image 
-          %li= image_tag '/yakiniku.jpg', alt: "test1", class: 'image1'
-          %li= image_tag '/images.jpg', alt: "test2", class: 'image2'
-          %li= image_tag '/images2.jpg', alt: "test3", class: 'image3'
-          %li= image_tag '/images3.jpg', alt: "test4", class: 'image4'
+        = image_tag @product.images[0].image_url, id: "main_image"
+      .sub_image
+        - @product.images.each_with_index do |image, i|
+          .sub_image_content
+            = image_tag image.image_url, id: "image#{i+1}"
+            
       .price
         = @product.price
         円

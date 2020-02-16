@@ -22,28 +22,51 @@
       width: 620px;
       .first_content {
         width: 620px;
-        height: 443px;
+        height: 350px;
         margin-top: 16px;
         text-align: center;
         list-style: none;
-        #image1 {
-          height: 346px;
-          width: 560px;
+        #main_image {
+          width: 400px;
+          height: 350px;
           object-fit: cover;
-          
-        }
-        .sub_image {
-          display: flex;
-          justify-content: center;
-          list-style: none;
+         }
+       }
+      .sub_image {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        object-fit: cover;
+        &_content {
+          height: 75px;
+          width: 75px;
           object-fit: cover;
-          .image1, .image2, .image3, .image4 {
+          margin: 10px 5px;
+          #image1 {
             height: 75px;
             width: 75px;
             object-fit: cover;
             margin: 10px 5px;
-          }
-        }
+          } 
+          #image2 {
+            height: 75px;
+            width: 75px;
+            object-fit: cover;
+            margin: 10px 5px;
+          } 
+          #image3 {
+            height: 75px;
+            width: 75px;
+            object-fit: cover;
+            margin: 10px 5px;
+          } 
+          #image4 {
+            height: 75px;
+            width: 75px;
+            object-fit: cover;
+            margin: 10px 5px;
+          } 
+        }   
       }
       .price {
         font-size: 46px;
