@@ -1,9 +1,8 @@
 class ProductsController < ApplicationController
-  before_action :set_image
   before_action :set_product, only:["destroy","show"]
 
   def index
-    @product = Product.last(10)
+    @product = Product.includes(:images).last(10)
     @products = Product.includes(:images).where(buyer: "").limit(10).order('created_at DESC')
   end
 
@@ -66,11 +65,8 @@ private
   end
 
   def set_product
-    @product = Product.find(params[:id])
+    @product = Product.includes(:images).find(params[:id])
   end
 
-  def set_image
-    @images = Image.last(10)
-  end
   
 end
