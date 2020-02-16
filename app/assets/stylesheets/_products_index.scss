@@ -238,7 +238,10 @@
         width: 160px;
         background-color: #ffffff;
         margin:10px;
-        
+        &__img{
+          background-size: cover;
+          width: 153px;
+        }
         &__text-box{
           box-sizing: border-box;
           color: #222;
