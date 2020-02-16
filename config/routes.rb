@@ -6,9 +6,12 @@ Rails.application.routes.draw do
       get 'category_children', defaults: { format: 'json' } 
       get 'category_grandchildren', defaults: { format: 'json' }
     end
+    member do
+      get 'confirm'
+    end
   end
   resources :users, only: [:index, :new, :create, :show]
-  get       '/products/confirm/:id', to: 'products#confirm'
+  
   resources :credits, only: [:new, :create, :show] do
     member do
       post 'delete', to: 'credits#delete'

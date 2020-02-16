@@ -1,10 +1,10 @@
 .header
-  部分テンプレート
+  = render "products/header"
   
 .body
   = notice
   .left_content
-    = render partial: 'users/sidebar'
+    = render 'users/sidebar'
   .credits
     .credits_form
       .credits_form__label
@@ -14,6 +14,7 @@
           .credits_form__box__number
             = f.label :カード番号, class: 'form_label'
             %span.caution 必須
+
           .credits_form__box__input
             = f.text_field :number, class: 'credit__input', id: 'number', maxlength: "16", placeholder: "半角数字のみ"
             .registration_error{type: "hidden", value: "必須項目です"}
@@ -34,10 +35,6 @@
               = f.label :月, class: "form-group__card--year-and-month"
               = f.select :card_year, options_for_select((2020..2030)), {}, {class: "year_select"}
               = f.label :年, class: "form-group__card--year-and-month"
-             
-              -# = f.date_select :expiredate, end_year: 2030, start_year: 2020, order:[:month,:year,:day], use_month_numbers: true, discard_day: true ,date_separator:'月', prompt: "--",with_css_classes:''
-              -# %span
-              -#   年
 
           .credits_form__box__securitycode
             = f.label :セキュリティーコード, class: 'form_label'
@@ -50,7 +47,5 @@
             = f.submit "追加する", class: "credit_send_btn", id: "credits_send_btn"
           #result
 
-
-            
 .footer
-  部分テンプレート
+  = render 'products/footer'
