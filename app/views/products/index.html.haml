@@ -24,17 +24,16 @@
   %h3 レディース新着アイテム
   = link_to "もっと見る ＞","#", class:"more"
   .first
-    - @products[0..4].each do |product|
+    - @product[0..4].each do |product|
       .first__contents
         .first__contents__box
           = link_to '', product_path(product.id), class: 'first__contents__box__link'
           .first__contents__box__img
-            -# = imd_tag(product.image), class: 'top_product_img'
+            = image_tag product.images[0].image_url
           .first__contents__box__name
             = product.name
           .first__contents__box__price
-            = product.price
-            円
+            = "#{product.price}円"
           .first__contents__header
             .first__contents__header__name
             .first__contents__header__more
@@ -45,7 +44,7 @@
         .first__contents__box
           = link_to '', product_path(product.id), class: 'first__contents__box__link'
           .first__contents__box__img
-            -# = imd_tag(product.image), class: 'top_product_img'
+            = image_tag product.images[0].image_url
           .first__contents__box__name
             = product.name
           .first__contents__box__price
