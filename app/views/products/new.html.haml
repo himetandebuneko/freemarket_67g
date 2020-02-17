@@ -77,7 +77,7 @@
                       サイズ
                       %span.form-require
                         必須
-                    = f.select :size, [["---", ""],["S", "S"]], {}, class: "select-default"
+                    = f.collection_select :size, Size.all, :id, :name, prompt: "--", class: 'select-default'
                       
                   .form-group
                     .form-group
