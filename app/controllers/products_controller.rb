@@ -60,6 +60,7 @@ class ProductsController < ApplicationController
     @shippingaddress = Shippingaddress.find(params[:id])
     @payer = Payer.find(params[:id])
     @shippingdate = Shippingdate.find(params[:id])
+    @size = Size.find(params[:id])
   end
 
 private
