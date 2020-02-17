@@ -55,6 +55,7 @@
             .first__contents__header
               .first__contents__header__name
               .first__contents__header__more
+              
   %h3 メンズ新着アイテム
   = link_to "もっと見る ＞","#", class:"more"
   .second__contents
@@ -87,5 +88,9 @@
 
 .purchase-btn
   %li 出品
-  = link_to "", new_product_path, class: "adada"
-  .fas.fa-camera
+  - if user_signed_in?
+    = link_to "", new_product_path, class: "adada"
+    .fas.fa-camera
+  - else
+    = link_to "", new_user_session_path, class: "adada"
+    .fas.fa-camera
