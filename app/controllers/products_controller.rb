@@ -61,6 +61,7 @@ class ProductsController < ApplicationController
     @payer = Payer.find(params[:id])
     @shippingdate = Shippingdate.find(params[:id])
     @size = Size.find(params[:id])
+    @user = User.find(params[:id])
   end
 
 private
