@@ -53,17 +53,17 @@
             %th
               商品の状態
             %td
-              = @product.condition
+              = @condition.name
           %tr
             %th
               配送料の負担
             %td
-              = @product.payer
+              = @payer.name
           %tr
             %th
               発送元地域
             %td
-              = @product.shippingaddress
+              = @shippingaddress.name
           %tr
             %th
               配送状態
@@ -73,7 +73,7 @@
             %th
               発送予定日数
             %td
-              = @product.shippingdate
+              = @shippingdate.name
       .option
         %ul.likes
           %i.fas.fa-star

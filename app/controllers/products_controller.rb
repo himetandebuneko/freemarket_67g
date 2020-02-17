@@ -56,6 +56,10 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @condition = Condition.find(params[:id])
+    @shippingaddress = Shippingaddress.find(params[:id])
+    @payer = Payer.find(params[:id])
+    @shippingdate = Shippingdate.find(params[:id])
   end
 
 private
