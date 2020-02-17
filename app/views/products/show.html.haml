@@ -22,7 +22,8 @@
             (税込）
           .price__status__postage
             送料込み
-      - if user_signed_in? && current_user.id == @product.seller
+        
+      - if user_signed_in? && current_user.id == @product.user_id
         .buy
           .edit-btn
             = link_to '編集する',"/products/#{@product.id}/edit", class: 'edit'
