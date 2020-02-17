@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      render :new
+      redirect_back(fallback_location: root_path)
     end
   end
   
