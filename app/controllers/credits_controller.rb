@@ -50,7 +50,7 @@ class CreditsController < ApplicationController
     card = Credit.find_by(user_id: current_user.id)
     @product = Product.find(params[:id])
     if card.blank?
-      redirect_to new_credits_path, alert: 'ERROR!!'
+      redirect_to new_credit_path, alert: 'ERROR!!'
     else
       Payjp::Charge.create(
       amount: @product.price,

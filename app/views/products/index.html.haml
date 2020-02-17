@@ -42,7 +42,7 @@
               .first__contents__header__more
   - if @product[5..9].present?              
     .first
-      - @products[5..9].each do |product|
+      - @product[5..9].each do |product|
         .first__contents
           .first__contents__box
             = link_to '', product_path(product.id), class: 'first__contents__box__link'
