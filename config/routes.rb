@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'products#index'
+  resources :signup, only: [:new, :create] do
+    collection do
+      post 'step'  #入力が全て完了
+      get 'complete_signup'  #登録完了後
+    end
+  end
   resources :products do 
     collection do
       get 'category_children', defaults: { format: 'json' } 
@@ -10,7 +16,7 @@ Rails.application.routes.draw do
       get 'confirm'
     end
   end
-  resources :users, only: [:index, :new, :create, :show]
+  resources :users, only: [:index, :show]
   resources :credits, only: [:new, :create, :show] do
     member do
       post 'delete', to: 'credits#delete'

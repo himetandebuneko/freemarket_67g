@@ -1,0 +1,29 @@
+.form
+  住所情報登録
+  = form_with model: @user, url: signup_index_path, id: 'user', class: 'new_address', local: true do |f|
+    .field
+      郵便番号
+    .field
+      = f.text_field :postcode
+    .field
+      都道府県
+    .field
+      = f.text_field :prefectures
+    .field
+      市区町村
+    .field
+      = f.text_field :city
+    .field
+      番地
+    .field
+      = f.text_field :housenumber
+    .field
+      住宅名
+    .field
+      = f.text_field :housename
+    .field
+      電話番号
+    .field
+      = f.text_field :phonenumber
+    .actions
+      = f.submit "Sign up"

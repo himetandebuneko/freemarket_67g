@@ -1,4 +1,34 @@
 .header
+  .header__top
+    .header__top__logo
+      %h1
+        = link_to image_tag("/images/logo/logo.png", width: '120px', alt: "logo1"),root_path
+    .search
+      = form_tag() do
+        %label.search__label
+          = icon'fa', 'search', class: "search__label--icon"
+        = text_field_tag :search, "",class:"search__field",placeholder:"何かお探しですか？"
+  .header__bottom
+    .header__bottom__left
+      %ul.header__bottom__left__categories
+        %li
+        = link_to root_path do
+          =image_tag("/images/icon/icon_category.png", width: '20px', alt: "icon1")
+          %span カテゴリから探す
+        %li
+        = link_to root_path do
+          =image_tag("/images/icon/icon_brand.png", width: '20px', alt: "icon2")
+          %span ブランドから探す
+    .header__bottom__right
+      .header__bottom__right__categories
+        - if user_signed_in?
+          = link_to "マイページ", "/users/#{current_user.id}", class: "btn-registration"
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class:"btn-login"
+          = link_to "FURIMAとは", root_path, class:"about-furima"
+        - else
+          = link_to "新規会員登録", new_signup_path, class: "btn-registration"
+          = link_to "ログイン", new_user_session_path, class:"btn-login"
+          = link_to "FURIMAとは", root_path, class:"about-furima"
   = render "header"
 .nav.slick-slider
   = link_to "#" do
