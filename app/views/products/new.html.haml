@@ -77,7 +77,7 @@
                       サイズ
                       %span.form-require
                         必須
-                    = f.collection_select :size, Size.all, :id, :name, prompt: "--", class: 'select-default'
+                    = f.collection_select :size_id, Size.all, :id, :name, prompt: "--", class: 'select-default'
                       
                   .form-group
                     .form-group
@@ -88,7 +88,7 @@
                       .select-wrap
                         %i.icon-arrow-bottom
 
-                        = f.collection_select :condition, Condition.all, :id, :name, prompt: "--", class: 'select-default'
+                        = f.collection_select :condition_id, Condition.all, :id, :name, prompt: "--", class: 'select-default'
 
               .sell-content.clearfix
                 %h3.sell-sub-head
@@ -102,7 +102,7 @@
                     .select-wrap
                       %i.icon-arrow-bottom
 
-                      = f.collection_select :payer, Payer.all, :id, :name, prompt: "--", class: 'select-default'
+                      = f.collection_select :payer_id, Payer.all, :id, :name, prompt: "--", class: 'select-default'
 
                   .form-group
                     %label
@@ -112,7 +112,7 @@
                     .select-wrap
                       %i.icon-arrow-bottom
 
-                      = f.collection_select :shippingaddress, Shippingaddress.all, :id, :name, prompt: "--", class: 'select-default'
+                      = f.collection_select :shippingaddress_id, Shippingaddress.all, :id, :name, prompt: "--", class: 'select-default'
                   .form-group
                     %label
                       発送までの日数
@@ -121,7 +121,7 @@
                     .select-wrap
                       %i.icon-arrow-bottom
 
-                      = f.collection_select :shippingdate, Shippingdate.all, :id, :name, prompt: "--", class: 'select-default'
+                      = f.collection_select :shippingdate_id, Shippingdate.all, :id, :name, prompt: "--", class: 'select-default'
                       
               .sell-content.clearfix
                 %h3.sell-sub-head

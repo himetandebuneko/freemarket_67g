@@ -38,7 +38,7 @@
             %th
               出品者
             %td
-              = @user.nickname
+              = @product.user.nickname
           %tr
             %th
               カテゴリー
@@ -48,22 +48,22 @@
             %th
               商品のサイズ
             %td
-              = @size.name
+              = @product.size.name
           %tr
             %th
               商品の状態
             %td
-              = @condition.name
+              = @product.condition.name
           %tr
             %th
               配送料の負担
             %td
-              = @payer.name
+              = @product.payer.name
           %tr
             %th
               発送元地域
             %td
-              = @shippingaddress.name
+              = @product.shippingaddress.name
           %tr
             %th
               配送状態
@@ -73,7 +73,7 @@
             %th
               発送予定日数
             %td
-              = @shippingdate.name
+              = @product.shippingdate.name
       .option
         %ul.likes
           %i.fas.fa-star
