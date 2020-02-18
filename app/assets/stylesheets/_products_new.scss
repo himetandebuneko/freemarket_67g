@@ -123,14 +123,19 @@ body {
             line-height: 1.5;
           }
           .sell-dropbox-container {
-            display: block;
+            display: inline;
             width: 620px;
             margin: 16px auto 0;
+            .sell-upload-items-container {
+              width: 100px;
+              display: flex;
+            }
             .sell-upload-items {
               float: left;
-              display: block;
+              .preview {
+                width: 100px;
+              }
               .sell-upload-items.ul{
-                width: 100%;
                 display: inline;
               }
             }
@@ -154,6 +159,38 @@ body {
             cursor: pointer;
             float: right;
             margin-left: 2%;
+            #image-box {
+              width: 100px;
+              height: 162px;
+              #previews {
+                display: flex;
+                width: 100px;
+                height: 162px;
+                .js-file_group {
+                  position: relative;
+                  width: 100px;
+                  height: 100px;
+                  input {
+                    // visibility: hidden;
+                    position: absolute;
+                    top: -50px;
+                    left: -50px;
+                  }
+                  .product_images_attributes_1_image {
+                    position: absolute;
+                    top: -50px;
+                    left: -100px;
+                  }
+                  .js-remove {
+                   position: absolute;
+                   margin-left: 30px;
+                   top: -50px;
+                   left: -100px;
+                   width: 50px;
+                  }
+                }
+              }
+            }
             .sell-upload-drop-box pre {
               position: absolute;
               top: 50%;
@@ -258,6 +295,118 @@ body {
             line-height: 1.5;
             cursor: pointer;
             margin-bottom: 45px;
+          }
+          #product_shippingaddress{
+            float: right;
+            width: 400px;
+            margin: 0;   
+            position: relative;
+            z-index: 2;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            cursor: pointer;
+            margin-bottom: 45px;
+          }
+          #product_payer{
+            float: right;
+            width: 400px;
+            margin: 0;   
+            position: relative;
+            z-index: 2;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            cursor: pointer;
+            margin-bottom: 45px;
+          }
+          #product_size{
+            float: right;
+            width: 400px;
+            margin: 0;   
+            position: relative;
+            z-index: 2;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            cursor: pointer;
+            margin-bottom: 45px;
+          }
+          #product_shippingdate{
+            float: right;
+            width: 400px;
+            margin: 0;   
+            position: relative;
+            z-index: 2;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            cursor: pointer;
+            margin-bottom: 45px;
+          }
+          #product_condition{
+            float: right;
+            width: 400px;
+            margin: 0;   
+            position: relative;
+            z-index: 2;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            cursor: pointer;
+            margin-bottom: 45px;
+          }
+          .select-wrap{
+            position: relative;
+            background: #fff;
+            margin: 8px 0 0;
+            height: 50px;
+            .fa.fa-chevron-down{
+              position: absolute;
+              right: 16px;
+              top: 50%;
+              z-index: 2;
+              color: #888;
+              font-size: 8px;
+              -webkit-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+            }
+          }
+          .category_select-box{
+            float: right;
+            width: 400px;
+            margin: 0;   
+            position: relative;
+            z-index: 2;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            cursor: pointer;
+            margin-bottom: 15px;
           }
           .l-left{
             float: left;

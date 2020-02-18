@@ -1,7 +1,7 @@
 .navigation
   %ul.mypage
     %li
-      = link_to 'マイページ','#', class: 'mypage_top'
+      = link_to 'マイページ', '/users/(current_user.id)', class: 'mypage_top'
     %li
       = link_to 'お知らせ','#' , class: 'mypage_list'
     %li
@@ -43,11 +43,11 @@
       設定
     %ul
       %li
-        = link_to 'プロフィール','#', class: 'setting_list'
+        = link_to 'プロフィール', '#', class: 'setting_list'
       %li
         = link_to '発送元・お届け先住所変更','#', class: 'setting_list'
       %li
-        = link_to '支払い方法','#', class: 'setting_list'
+        = link_to 'カード登録・確認', '/credits/(current_user.id)', class: 'setting_list'
       %li
         = link_to 'メール/パスワード','#', class: 'setting_list'
       %li
@@ -55,4 +55,4 @@
       %li
         = link_to '電話番号の確認','#', class: 'setting_list'
       %li
-        = link_to 'ログアウト','#', class: 'setting_list'
+        = link_to 'ログアウト', users_path, class: 'setting_list'

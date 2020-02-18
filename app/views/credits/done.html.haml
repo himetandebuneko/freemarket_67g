@@ -1,0 +1,10 @@
+.header
+  = render 'products/header'
+.body
+  .left_content
+    = render 'users/sidebar'
+  .right_content
+    .credit_done
+      購入完了しました。
+      .credit_done__btn
+        = link_to 'TOPへ戻る',root_path , class: 'home_btn'
