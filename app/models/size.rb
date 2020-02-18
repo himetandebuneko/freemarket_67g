@@ -4,3 +4,4 @@ class Size < ActiveHash::Base
     {id: 6, name: 'XL(LL)'},{id: 7, name: '2XL(3L)'},{id: 8, name: '3XL(4L)'},{id: 9, name: '4XL(5L)以上'},{id: 10, name: 'FREE SIZE'}
   ]
 end
+

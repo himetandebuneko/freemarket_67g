@@ -24,6 +24,7 @@ class ProductsController < ApplicationController
   
   def create
     @product = Product.new(product_params)
+    
     if @product.save
       redirect_to root_path
     else
@@ -56,18 +57,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @condition = Condition.find(params[:id])
-    @shippingaddress = Shippingaddress.find(params[:id])
-    @payer = Payer.find(params[:id])
-    @shippingdate = Shippingdate.find(params[:id])
-    @size = Size.find(params[:id])
-    @user = User.find(params[:id])
+   
   end
 
 private
 
   def product_params
-    params.require(:product).permit(:name, :detail, :category_id, :size, :condition, :payer, :shippingaddress, :shippingdate, :price, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :detail, :category_id, :size_id, :condition_id, :payer_id, :shippingaddress_id, :shippingdate_id, :price, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_product

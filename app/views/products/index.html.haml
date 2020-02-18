@@ -117,7 +117,7 @@
   = render 'footer'
 
 .purchase-btn
-  %li 出品
+  %span.purchase_text 出品
   - if user_signed_in?
     = link_to "", new_product_path, class: "adada"
     .fas.fa-camera
