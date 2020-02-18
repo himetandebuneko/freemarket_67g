@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_09_144926) do
+ActiveRecord::Schema.define(version: 2020_02_14_100914) do
+
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "postcode", default: "", null: false
+    t.string "prefectures", default: "", null: false
+    t.string "city", default: "", null: false
+    t.string "housenumber", default: "", null: false
+    t.string "housename"
+    t.integer "phonenumber"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -48,10 +61,19 @@ ActiveRecord::Schema.define(version: 2020_02_09_144926) do
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
+  create_table "sessions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "session_id", null: false
+    t.text "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["session_id"], name: "index_sessions_on_session_id", unique: true
+    t.index ["updated_at"], name: "index_sessions_on_updated_at"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
-    t.string "passward", default: "", null: false
+    t.string "password", default: "", null: false
     t.string "lastname", default: "", null: false
     t.string "firstname", default: "", null: false
     t.string "lastnamekana", default: "", null: false
@@ -67,6 +89,7 @@ ActiveRecord::Schema.define(version: 2020_02_09_144926) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addresses", "users"
   add_foreign_key "images", "products"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"

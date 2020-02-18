@@ -1,0 +1,19 @@
+-# .form
+-#   住所情報登録
+-#   = form_with model: @address, url: step3_signup_index_path, id: 'new_address', class: 'new_address', local: true do |f|
+-#     = render "devise/shared/error_messages", resource: @address
+-#     .field
+-#       = f.text_field :postcode
+-#     .field
+-#       = f.text_field :prefectures
+-#     .field
+-#       = f.text_field :city
+-#     .field
+-#       = f.text_field :housenumber
+-#     .field
+-#       = f.text_field :housename
+-#     .field
+-#       = f.text_field :phonenumber
+-#     .actions
+-#       = f.submit "Sign up"
+-#   = render "devise/shared/links"
