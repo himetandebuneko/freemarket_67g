@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :images, dependent: :destroy
@@ -6,6 +7,11 @@ class Product < ApplicationRecord
   belongs_to :category, optional: true
   has_one :delivery
   has_one :todo
+  belongs_to_active_hash :condition
+  belongs_to_active_hash :payer
+  belongs_to_active_hash :shippingaddress
+  belongs_to_active_hash :shippingdate
+  belongs_to_active_hash :size
   
   validates :name, presence: true
   validates :detail, presence: true

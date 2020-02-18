@@ -386,6 +386,13 @@
     font-size: 30px;
     color: white;
   }
+  .purchase_text{
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-top: 14px;
+  }
   .adada{
     margin: auto;
     display: block;
@@ -400,6 +407,10 @@
     text-decoration: none;
     color: white;
     align-items: center;
+  }
+  .fa-camera:before{
+    content: "";
+    font-size: 70px;
   }
 }
 
