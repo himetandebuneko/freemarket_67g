@@ -24,7 +24,7 @@ class SignupController < ApplicationController
     @user.build_address(session[:address_attributes_after_new])
     @user.build_address(user_params[:address_attributes])
     if @user.save
-      session[:id] = @user.id
+      sign_in(@user)
       redirect_to complete_signup_signup_index_path
     else
       render '/signup/new'

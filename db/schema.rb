@@ -80,8 +80,6 @@ ActiveRecord::Schema.define(version: 2020_02_18_083526) do
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "shippingaddress_id"
-    t.integer "condition_id"
     t.integer "shippingdate_id"
     t.integer "size_id"
     t.integer "payer_id"
