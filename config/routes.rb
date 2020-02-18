@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:index, :new, :create, :show]
-  
   resources :credits, only: [:new, :create, :show] do
     member do
       post 'delete', to: 'credits#delete'

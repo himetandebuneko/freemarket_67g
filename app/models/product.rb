@@ -14,6 +14,7 @@ class Product < ApplicationRecord
   validates :condition, presence: true
   validates :shippingaddress, presence: true
   validates :shippingdate, presence: true
+  validates :payer, presence: true  
   validates :user_id, presence: true
   validates :category_id, presence: true
   validates :images, presence: true
