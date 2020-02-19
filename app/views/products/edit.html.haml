@@ -10,9 +10,16 @@
           %ul.edit-first_content_image
             - @product.images.each do |img|
               = image_tag img.image_url
-            %label{class: "edit-sub_image__ultext ul-id-"}
-            = f.fields_for :images do |i|
-              = i.file_field :image_id,"data-id": "#{i}",class: "file_field"
+            %label{class: "edit-sub_image__ultext"} 
+              = f.fields_for :images do |i|
+                = i.file_field :image,"data-id": "#{i.index}",class: "file_field"
+                .js-remove 削除
+                - if @product.persisted?
+                  = i.check_box :_destroy, data: { index: i.index }, class: 'hidden-destroy'
+              - if @product.persisted?
+                .js-file_group{data: { index: "#{@product.images.count}" }}
+                  = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}]image]", class: "js-file"
+                  .js-remove 削除
       .edit-second_content
         .edit-products_info
           %table

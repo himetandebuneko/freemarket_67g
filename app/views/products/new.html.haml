@@ -36,7 +36,7 @@
                             -# = link_to '編集', "#{edit_product_path}"
                         - if @product.persisted?
                           .js-file_group{data: {id: "#{@product.images.count}"}}
-                            = i.file_field :image, name: "product[images_attributes][#{@product.images.count}][src]", class: "js-file"
+                            = i.file_field :image, name: "product[images_attributes][#{@product.images.count}]image]", class: "js-file"
                             .js-remove 削除
                     %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
                     %i.icon-camera
