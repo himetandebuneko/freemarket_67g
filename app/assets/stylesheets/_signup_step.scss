@@ -1,0 +1,101 @@
+.address_form {
+  width: 400px;
+  background-color: $backgroundColor;
+  height: 30px;
+  padding: 5px 15px;
+  margin: 15px;
+  line-height: 30px;
+  border: 1px solid;
+  border-radius: 4px;
+}
+sp {
+  font-size: 14px;
+  color: $mainWhiteColor;
+  background-color: #ea352d;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.addressMain {
+  background-color: $backgroundColor;
+  height: 100vh;
+  &__login {
+    width: 700px;
+    margin: auto;
+    background-color: $mainWhiteColor;
+    &__account {
+      height: 70px;
+      font-size: 22px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 70px;
+    }
+    &__form {
+      .new_address {
+        .address {
+          text-align: center;
+          padding: 40px 120px;
+          &__postCode {
+            &__info {
+              text-align: left;
+            }
+            &__form {
+            }
+          }
+          &__prefectures {
+            &__info {
+              text-align: left;
+            }
+            &__form {
+            }
+          }
+          &__city {
+            &__info {
+              text-align: left;
+            }
+            &__form {
+            }
+          }
+          &__houseNumber {
+            &__info {
+              text-align: left;
+            }
+            &__form {
+            }
+          }
+          &__houseName {
+            &__info {
+              text-align: left;
+            }
+            &__form {
+            }
+          }
+          &__phoneNumber {
+
+            &__info {
+              text-align: left;
+            }
+            &__form {
+            }
+          }
+          &__action {
+            height: 70px;
+            &__submit {
+              margin: 30px auto;
+              text-align: center;
+              height: 50px;
+              width: 200px;
+              line-height: 50px;
+              .address_btn {
+                color: $mainWhiteColor;
+                background-color: #ea352d;
+                text-align: center;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
