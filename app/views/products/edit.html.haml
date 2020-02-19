@@ -9,76 +9,122 @@
         .edit-first_content
           %ul.edit-first_content_image
             - @product.images.each do |img|
-              = image_tag img.image_url
-            %label{class: "edit-sub_image__ultext"} 
-              = f.fields_for :images do |i|
-                = i.file_field :image,"data-id": "#{i.index}",class: "file_field"
-                .js-remove 削除
-                - if @product.persisted?
-                  = i.check_box :_destroy, data: { index: i.index }, class: 'hidden-destroy'
+              = image_tag img.image_url 
+            = f.fields_for :images do |i|
+              .js-file_group{ data: { index: "#{@product.images.count}" }}
+                = i.file_field :image,"data-index": "#{i.index}",class: "js-file"
+                %span.js-remove 削除
               - if @product.persisted?
-                .js-file_group{data: { index: "#{@product.images.count}" }}
-                  = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}]image]", class: "js-file"
-                  .js-remove 削除
-      .edit-second_content
-        .edit-products_info
-          %table
-            %tr
-              %th
-                価格
-              %td
-                = f.number_field :price, class:'price-box'
-                円 (税込)
-                .fas.fa-pen
-            %tr
-              %th
-                商品名
-              %td
-                = f.text_field :name, class:'name-box'
-                .fas.fa-pen
-            %tr
-              %th
-                カテゴリー
-              %td
-                = f.select :category, Category.all.map { |category| [category.name] }, class:'category-box1'
-                = f.select :category, Category.all.map { |category| [category.name] }, class:'category-box2'
-                = f.select :category, Category.all.map { |category| [category.name] }, class:'category-box3'
-            %tr
-              %th
-                商品のサイズ
-              %td
-                = f.text_field :size, class:'size-box'
-                .fas.fa-pen
-            %tr
-              %th
+                = i.check_box :_destroy, data: { index: i.index }, class: 'hidden-destroy'
+            - if @product.persisted?
+              .js-file_group{ data: { index: "#{@product.images.count}" }}
+                = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: "js-file"
+                %span.js-remove 削除
+      .sell-content
+        .form-group
+          %label
+            商品名
+            %span.form-require
+              必須
+
+          = f.text_field :name, placeholder: "商品名（必須 40文字まで)", value: "#{@product.name}", class: "input-default"
+        .form-group
+          %label
+            商品の説明
+            %span.form-require
+              必須
+
+          = f.text_area :detail, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", rows: "5", class: "textarea-default"
+      .sell-content.clearfix
+        %h3.sell-sub-head
+          商品の詳細
+        .sell-form-box
+          .form-group
+            %label
+              カテゴリー
+              %span.form-require
+                必須
+
+
+            %div
+              .select-wrap
+                %i.fa.fa-chevron-down
+                -# = f.collection_select :category_id, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+              .product_select-children
+            %label
+              サイズ
+              %span.form-require
+                必須
+            = f.collection_select :size_id, Size.all, :id, :name, prompt: "--", class: 'select-default'
+              
+          .form-group
+            .form-group
+              %label
                 商品の状態
-              %td
-                = f.text_field :condition, class:'status-box'
-                .fas.fa-pen
-            %tr
-              %th
-                配送料の負担
-              %td
-                = f.text_field :payer, class:'payer-box'
-                .fas.fa-pen
-            %tr
-              %th
-                発送元地域
-              %td
-                = f.text_field :shippingaddress, class:'shippingaddress-box'
-                .fas.fa-pen
-            %tr
-              %th
-                配送状態
-              %td
-                = f.text_field :status, class:'status-box'
-                .fas.fa-pen
-            %tr
-              %th
-                発送予定日数
-              %td
-                = f.text_field :shippingdate, class:'shippingdate-box'
-                .fas.fa-pen
+                %span.form-require
+                  必須
+              .select-wrap
+                %i.icon-arrow-bottom
+
+                = f.collection_select :condition_id, Condition.all, :id, :name, prompt: "--", class: 'select-default'
+
+      .sell-content.clearfix
+        %h3.sell-sub-head
+          配送について
+        .sell-form-box
+          .form-group
+            %label
+              配送料の負担
+              %span.form-require
+                必須
+            .select-wrap
+              %i.icon-arrow-bottom
+
+              = f.collection_select :payer_id, Payer.all, :id, :name, prompt: "--", class: 'select-default'
+
+          .form-group
+            %label
+              発送元の地域
+              %span.form-require
+                必須
+            .select-wrap
+              %i.icon-arrow-bottom
+
+              = f.collection_select :shippingaddress_id, Shippingaddress.all, :id, :name, prompt: "--", class: 'select-default'
+          .form-group
+            %label
+              発送までの日数
+              %span.form-require
+                必須
+            .select-wrap
+              %i.icon-arrow-bottom
+
+              = f.collection_select :shippingdate_id, Shippingdate.all, :id, :name, prompt: "--", class: 'select-default'
+              
+      .sell-content.clearfix
+        %h3.sell-sub-head
+          配送について
+        .sell-form-box
+          %ul.sell-price
+            %li.form-team
+              %label.l-left
+                価格
+                %span.form-require
+                  必須
+              .l-right.sell-price-input
+                ¥
+                %div
+                  = f.text_field :price, placeholder: "例）300", value: "#{@product.price}", class: "input-fee"
+            %li.clearfix
+              .l-left
+                販売手数料(10%)
+              .l-right
+                _
+            %li.clearfix.bold
+              .l-left
+                販売利益
+              .l-right
+                _
             .edit-done1
               = f.submit '編集を完了する', class: 'edit-done2'
   .edit-footer

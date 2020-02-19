@@ -1,16 +1,19 @@
 $(document).on('turbolinks:load', ()=> {
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
-    const html = `<input data-id="${num}" class="file_field" type="file" name="product[images_attributes][${num}][image]" id="product_images_attributes_${num}_image">`;
+    const html = `<div class="js-file_group" data-index="${num}">
+                    <input type="file" name="product[images_attributes][${num}][image]" id="image" class="js-file">
+                    <div class="js-remove">削除</div>
+                  </div>`;
     return html;
   }
   const buildImg = (index, url)=> {
-    const html = `<img data-id="${index}" src="${url}" width="100px" height="100px">`;
+    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
     return html;
   }
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-  lastIndex =  $('.js-file_group:last').data('id');
+  lastIndex =  $('.js-file_group:last').data('index');
   fileIndex.splice(0, lastIndex);
 
   $('.hidden-destroy').hide();
@@ -33,13 +36,13 @@ $(document).on('turbolinks:load', ()=> {
   });
 
   $('.js-remove').on('click', function() {
-    const targetIndex = $(this).parent().data('id');
-    const hiddenCheck = $(`input[data-id="${targetIndex}"].hidden-destroy`);
-    debugger
+    const targetIndex = $(this).parent().next().next().data('index');
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     if (hiddenCheck) hiddenCheck.prop('checked', true);
+    debugger
     $(this).prev().remove();
     $(this).remove();
-    // $(`img[data-id="${targetIndex}"]`).remove();
+    $(`img[data-index="${targetIndex}"]`).remove();
     // 画像入力欄が0個にならないようにしておく
     if ($('input').length == 0) $('.edit-first_content').append(buildFileField(fileIndex[0]));
   });

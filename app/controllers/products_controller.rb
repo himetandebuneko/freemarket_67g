@@ -2,8 +2,8 @@ class ProductsController < ApplicationController
   before_action :set_product, only:["destroy", "show", "edit", "update"]
 
   def index
-    @product = Product.includes(:images).last(10)
-    @products = Product.includes(:images).where(buyer: "").limit(10).order('created_at DESC')
+    @product = Product.includes(:images).where(status_id: 0).last(10)
+    @products = Product.includes(:images).where(status_id: 1).limit(10).order('created_at DESC')
   end
 
   def new
@@ -58,13 +58,16 @@ class ProductsController < ApplicationController
   end
 
   def show
-   
+    # @card = Credit.find_by(user_id: current_user.id)
+    @card = Credit.find_by(params[:id])
   end
 
 private
 
   def product_params
-    params.require(:product).permit(:name, :detail, :category_id, :size_id, :condition_id, :payer_id, :shippingaddress_id, :shippingdate_id, :price, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:product)
+    .permit(:name, :detail, :category_id, :size_id, :condition_id, :payer_id, :shippingaddress_id,
+     :shippingdate_id, :price, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_product

@@ -3,12 +3,12 @@ FactoryBot.define do
   factory :product do
     name            {"名前"}
     detail          {"詳細"}
-    size            {"S"}
+    size_id            {"1"}
     price           {100}
-    condition       {"新品"}
-    shippingaddress {"北海道"}
-    shippingdate    {"1~2日で発送"}
-    payer           {"1"}
+    condition_id       {"1"}
+    shippingaddress_id {"北海道"}
+    shippingdate_id    {"1~2日で発送"}
+    payer_id           {"1"}
     category_id     {"1"}
     user_id         {1}
   end

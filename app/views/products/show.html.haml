@@ -30,8 +30,11 @@
           .delete-btn
             = link_to 'この商品を削除する', "#{@product.id}", method: :delete, class:'delete'
       - else
-        .buy
-          = link_to '購入画面に進む',  confirm_product_path, class: 'buy_btn'
+        - if @card.blank?
+          = link_to 'カード登録へ', new_credit_path
+        - else
+          .buy
+            = link_to '購入画面に進む',  confirm_product_path, class: 'buy_btn'
       .second_content
       商品コメントだよ
       .products_info
