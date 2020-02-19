@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
-  before_action :set_image
   before_action :set_product, only:["destroy", "show", "edit", "update"]
 
   def index
+    @product = Product.includes(:images).last(10)
     @products = Product.includes(:images).where(buyer: "").limit(10).order('created_at DESC')
   end
 
@@ -24,10 +24,11 @@ class ProductsController < ApplicationController
   
   def create
     @product = Product.new(product_params)
+    
     if @product.save
       redirect_to root_path
     else
-      render :new
+      redirect_back(fallback_location: root_path)
     end
   end
   
@@ -57,20 +58,18 @@ class ProductsController < ApplicationController
   end
 
   def show
+   
   end
 
 private
 
   def product_params
-    params.require(:product).permit(:name, :detail, :category_id, :size, :condition, :payer, :shippingaddress, :shippingdate, :price, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :detail, :category_id, :size_id, :condition_id, :payer_id, :shippingaddress_id, :shippingdate_id, :price, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_product
-    @product = Product.find(params[:id])
+    @product = Product.includes(:images).find(params[:id])
   end
 
-  def set_image
-    @images = Image.last(10)
-  end
   
 end

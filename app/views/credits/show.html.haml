@@ -1,9 +1,8 @@
 .header
-  部分テンプレート
-
+  = render "products/header"
 .body
   .left_content
-    = render partial: 'users/sidebar'
+    = render 'users/sidebar'
   .credits
     .credits_show
       .credits_show__label
@@ -25,3 +24,6 @@
         .credits_show__main__footer
           .credits_show__main__footer__about
             = link_to '支払い方法について  >>', '#', class: 'credits_show__main__footer__about__btn'
+
+.footer
+  = render 'products/footer'

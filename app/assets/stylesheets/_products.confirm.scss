@@ -1,5 +1,5 @@
 //ヘッダー部分テンプレート差し替えのため仮置き
-.header {
+.header2 {
   z-index: 1;
   height: 128px;
   background: #F5F5F5;
@@ -29,7 +29,6 @@
         margin: 0 auto;
         background-color: blue($color: #000000);
         &__item-box {
-          // display: flex;
           height: 80px;
           h3 {
             text-align: center;

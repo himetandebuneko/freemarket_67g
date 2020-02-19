@@ -1,19 +1,18 @@
 .preview
   .header
-    部分テンプレート
+    = render 'header'
   .products
     .products__name
       = @product.name
     .contents
       
       .first_content
-        -# = @products.images.image
-        .first_content_image= image_tag '/yakiniku.jpg', alt: "test", id: 'image1'
-        %ul.sub_image 
-          %li= image_tag '/yakiniku.jpg', alt: "test1", class: 'image1'
-          %li= image_tag '/images.jpg', alt: "test2", class: 'image2'
-          %li= image_tag '/images2.jpg', alt: "test3", class: 'image3'
-          %li= image_tag '/images3.jpg', alt: "test4", class: 'image4'
+        = image_tag @product.images[0].image_url, id: "main_image"
+      .sub_image
+        - @product.images.each_with_index do |image, i|
+          .sub_image_content
+            = image_tag image.image_url, id: "image#{i+1}"
+            
       .price
         = @product.price
         円
@@ -32,7 +31,7 @@
             = link_to 'この商品を削除する', "#{@product.id}", method: :delete, class:'delete'
       - else
         .buy
-          = link_to '購入画面に進む', '/products/confirm/:id', class: 'buy_btn'
+          = link_to '購入画面に進む',  confirm_product_path, class: 'buy_btn'
       .second_content
       商品コメントだよ
       .products_info
@@ -41,32 +40,32 @@
             %th
               出品者
             %td
-              = @product.seller
+              = @product.user.nickname
           %tr
             %th
               カテゴリー
             %td
-              = @product.category
+              = @product.category.name
           %tr
             %th
               商品のサイズ
             %td
-              = @product.size
+              = @product.size.name
           %tr
             %th
               商品の状態
             %td
-              = @product.condition
+              = @product.condition.name
           %tr
             %th
               配送料の負担
             %td
-              -# = @product.payer
+              = @product.payer.name
           %tr
             %th
               発送元地域
             %td
-              = @product.shippingaddress
+              = @product.shippingaddress.name
           %tr
             %th
               配送状態
@@ -76,7 +75,7 @@
             %th
               発送予定日数
             %td
-              = @product.shippingdate
+              = @product.shippingdate.name
       .option
         %ul.likes
           %i.fas.fa-star
@@ -118,4 +117,4 @@
   .item_more
     = link_to 'もっと見る','#',class: 'item_more__btn'
   .footer
-    部分テンプレート
+    = render 'footer'

@@ -296,7 +296,7 @@ body {
             cursor: pointer;
             margin-bottom: 45px;
           }
-          #product_shippingaddress{
+          #product_shippingaddress_id{
             float: right;
             width: 400px;
             margin: 0;   
@@ -312,7 +312,7 @@ body {
             cursor: pointer;
             margin-bottom: 45px;
           }
-          #product_payer{
+          #product_payer_id{
             float: right;
             width: 400px;
             margin: 0;   
@@ -328,7 +328,7 @@ body {
             cursor: pointer;
             margin-bottom: 45px;
           }
-          #product_shippingdate{
+          #product_size_id{
             float: right;
             width: 400px;
             margin: 0;   
@@ -344,7 +344,23 @@ body {
             cursor: pointer;
             margin-bottom: 45px;
           }
-          #product_condition{
+          #product_shippingdate_id{
+            float: right;
+            width: 400px;
+            margin: 0;   
+            position: relative;
+            z-index: 2;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: 0;
+            font-size: 16px;
+            line-height: 1.5;
+            cursor: pointer;
+            margin-bottom: 45px;
+          }
+          #product_condition_id{
             float: right;
             width: 400px;
             margin: 0;   
