@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_02_14_100914) do
     t.string "housename"
     t.integer "phonenumber"
     t.bigint "user_id", null: false
+    t.string "prefecture_id", default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"

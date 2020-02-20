@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only:["destroy", "show", "edit", "update"]
+  before_action :set_product, only:["destroy", "show", "edit", "update", "confirm"]
 
   def index
     @product = Product.includes(:images).where(status_id: 0).last(10)
@@ -54,7 +54,7 @@ class ProductsController < ApplicationController
   end
 
   def confirm
-    @product = Product.find(params[:id])
+    # @product = Product.find(params[:id])
     @card = Credit.find_by(user_id: current_user.id)
   end
 
