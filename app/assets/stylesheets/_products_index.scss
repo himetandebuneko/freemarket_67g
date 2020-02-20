@@ -150,6 +150,9 @@
     }
   }
 }
+.google_image{
+  width: 100%;
+}
 
 .main {
   margin: 0 100px 50px;
@@ -280,11 +283,13 @@
       top: 50%;
       font-size: 24px;
       font-weight: 600;
+      padding-top: 160px;
     }
     p {
       text-align: center;
       font-size: 35px;
       margin-bottom: 20px;
+      padding-top: 17px;
     }
   }
 
