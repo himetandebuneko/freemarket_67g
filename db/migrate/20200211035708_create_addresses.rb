@@ -8,6 +8,7 @@ class CreateAddresses < ActiveRecord::Migration[5.2]
       t.string :housename
       t.integer :phonenumber,       unique: true, default: ""
       t.references :user,           null: false, foreign_key: true
+      t.string :prefecture_id,      null: false, default: ""
       t.timestamps
     end
   end

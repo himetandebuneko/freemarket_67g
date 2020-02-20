@@ -4,26 +4,27 @@
     .field
       郵便番号
     .field
-      = f.text_field :postcode
+      = f.text_field :postcode, placeholder: "(例)123-4567", class: "postcode__no"
     .field
       都道府県
     .field
-      = f.text_field :prefectures
+      = f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: '--', class: 'select-default'
+      -# = f.text_field :prefectures, placeholder: "(例)神奈川県", class: "address__area"
     .field
       市区町村
     .field
-      = f.text_field :city
+      = f.text_field :city, placeholder: "(例)横浜市緑区", class: "city__area"
     .field
       番地
     .field
-      = f.text_field :housenumber
+      = f.text_field :housenumber, placeholder: "(例)青山1-1-1", class: "area__number"
     .field
-      住宅名
+      建物名
     .field
-      = f.text_field :housename
+      = f.text_field :housename, placeholder: "(例)柳ビル103", class: "building__name"
     .field
       電話番号
     .field
-      = f.text_field :phonenumber
+      = f.text_field :phonenumber, placeholder: "(例)09012345678", class: "phone__number"
     .actions
       = f.submit "Sign up"
