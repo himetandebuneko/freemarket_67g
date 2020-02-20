@@ -25,10 +25,10 @@
       - if user_signed_in? && current_user.id == @product.user_id
         .buy
           .edit-btn
-            = link_to '編集する',"/products/#{@product.id}/edit", class: 'edit'
+            = link_to '編集する', edit_product_path, class: 'edit'
         .buy
           .delete-btn
-            = link_to 'この商品を削除する', "#{@product.id}", method: :delete, class:'delete'
+            = link_to 'この商品を削除する', product_path, method: :delete, class:'delete'
       - elsif user_signed_in? 
         .buy
           = link_to '購入画面に進む',  confirm_product_path, class: 'buy_btn'
