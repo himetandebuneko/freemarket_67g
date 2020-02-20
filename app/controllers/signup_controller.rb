@@ -43,7 +43,7 @@ class SignupController < ApplicationController
       :lastnamekana, 
       :firstnamekana, 
       :birthday, 
-      address_attributes: [:id, :postcode, :prefectures, :city, :housenumber, :housename, :phonenumber]
+      address_attributes: [:id, :postcode, :prefecture_id, :city, :housenumber, :housename, :phonenumber]
     )
   end
 end
