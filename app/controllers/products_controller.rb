@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only:["destroy","show"]
+  before_action :set_product, only:["destroy", "show", "edit", "update"]
 
   def index
-    @product = Product.includes(:images).last(10)
-    @products = Product.includes(:images).where(buyer: "").limit(10).order('created_at DESC')
+    @product = Product.includes(:images).where(status_id: 0).last(10)
+    @products = Product.includes(:images).where(status_id: 1).limit(10).order('created_at DESC')
   end
 
   def new
@@ -33,13 +33,14 @@ class ProductsController < ApplicationController
   end
   
   def edit
+    
   end
   
   def update
     if @product.update(product_params)
        redirect_to root_path
     else
-      render :edit
+      redirect_back(fallback_location: root_path)
     end
   end
   
@@ -57,7 +58,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-   
+
   end
 
 private

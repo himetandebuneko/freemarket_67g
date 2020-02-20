@@ -21,17 +21,21 @@
             (税込）
           .price__status__postage
             送料込み
-      - if user_signed_in? && current_user.id == @product.seller
+        
+      - if user_signed_in? && current_user.id == @product.user_id
         .buy
-          .not_buy-btn 購入画面に進む
-      - else
+          .edit-btn
+            = link_to '編集する', edit_product_path(@product.id), class: 'edit'
         .buy
           .delete-btn
-            = link_to 'この商品を削除する', "#{@product.id}", method: :delete, class:'delete'
+            = link_to 'この商品を削除する', product_path(@product.id), method: :delete, class:'delete'
+      - elsif user_signed_in? 
         .buy
           = link_to '購入画面に進む',  confirm_product_path, class: 'buy_btn'
+      - else
+        = link_to 'ログインへ', new_user_session_path
       .second_content
-        = @product.name
+      商品コメントだよ
       .products_info
         %table
           %tr
@@ -66,11 +70,6 @@
               = @product.shippingaddress.name
           %tr
             %th
-              配送状態
-            %td
-              = @product.status
-          %tr
-            %th
               発送予定日数
             %td
               = @product.shippingdate.name
@@ -100,7 +99,7 @@
           お気に入りです。
           
       .form
-        = form_with do |f|
+        = form_with local: true do |f|
           = f.text_area :detail, class: 'text_area'
           .text_note
             相手のことを考え丁寧なコメントを心がけましょう。

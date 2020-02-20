@@ -57,7 +57,7 @@ class CreditsController < ApplicationController
       customer: card.customer_id,
       currency: 'jpy'
       )
-      if @product.update(status: 1, buyer: current_user.id)
+      if @product.update(status_id: 1, buyer: current_user.id)
         redirect_to action: 'done'
         flash[:notice] = '購入しました。'
       else

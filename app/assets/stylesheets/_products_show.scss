@@ -93,11 +93,15 @@
           font-size: 24px;
           text-decoration: none;
         }
-        .not_buy-btn {
+        .edit-btn {
           color: $mainWhiteColor;
-          background-color: $mainGrayColor;
-          font-size: 24px;
+          background-color: red;
           text-decoration: none;
+        }
+        a.edit {
+          color: $mainWhiteColor;
+          background-color: red;
+          font-size: 24px;
         }
         .delete-btn {
           color: $mainWhiteColor;
@@ -107,7 +111,6 @@
         a.delete {
           color: $mainWhiteColor;
           font-size: 24px;
-          text-decoration: none;
         }
       }
 
