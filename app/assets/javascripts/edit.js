@@ -19,7 +19,7 @@ $(document).on('turbolinks:load', ()=> {
 
   $('.hidden-destroy').hide();
 
-  $('#image').on('change', function(e) {
+  $(document).on('change', '#image', function(e) {
     const targetIndex = $(this).parent().data('index');
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
@@ -27,7 +27,7 @@ $(document).on('turbolinks:load', ()=> {
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {
-      $('img:last').after(buildImg(targetIndex, blobUrl));
+      $('.preview_image:last').after(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
       $('.edit-first_content_image').append(buildFileField(fileIndex[0]));
       fileIndex.shift();

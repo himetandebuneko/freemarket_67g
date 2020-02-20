@@ -33,7 +33,8 @@ class ProductsController < ApplicationController
   end
   
   def edit
-    
+    @category = Category.where(ancestry: nil).each do |parent|
+    end
   end
   
   def update

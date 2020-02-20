@@ -1,6 +1,14 @@
 .edit-preview
   .edit-header
-    部分テンプレート
+    .single-container
+      %header.single-header
+        %h1
+          =link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?73731125", alt: "mercari", class: "image"), root_path
+      %main.single-main
+        %section.l-single-container.buy-item-container
+          #sell-container
+            %div{"data-reactroot": ""}
+              .sell-container-inner
   .edit-products
     = form_with model: @product, local: true do |f|
       .edit-products__name
@@ -9,7 +17,7 @@
         .edit-first_content
           %ul.edit-first_content_image
             - @product.images.each do |img|
-              = image_tag img.image_url 
+              = image_tag img.image_url, class: "preview_image"
             = f.fields_for :images do |i|
               .js-file_group{ data: { index: "#{@product.images.count}" }}
                 = i.file_field :image,"data-index": "#{i.index}",class: "js-file"
@@ -49,7 +57,7 @@
             %div
               .select-wrap
                 %i.fa.fa-chevron-down
-                = f.collection_select :category_id, Category.all, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+                = f.collection_select :category_id, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
               .product_select-children
             %label
               サイズ
@@ -127,5 +135,17 @@
                 _
             .edit-done1
               = f.submit '編集を完了する', class: 'edit-done2'
-  .edit-footer
-    部分テンプレート
+              
+  %footer.single-footer
+    %nav
+      %ul.clearfix
+        %li.first
+          =link_to "プライバシーポリシー", "#", class: 'second'
+        %li.first
+          =link_to "メルカリ利用規約", "#", class: 'second'
+        %li.first
+          =link_to "特定商取引法に関する表記", "#", class: 'second'
+    =link_to image_tag("//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?73731125", alt: "mercari", height: "65", width: "80", class: "single-footer-logo"), root_path
+    %p
+      %small.third 
+        © Mercari, Inc.
