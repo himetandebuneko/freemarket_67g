@@ -3,24 +3,22 @@
   mercari
 .buy-main
   .buy-main__container
-    %h2.buy-main__container__header 購入内容の確認
+    .buy-main__container__header
+      購入内容の確認
     .buy-main__container__content
-      .buy-main__container__content__inner
-        .buy-main__container__content__inner__item-box
-          %h3
-            =image_tag("/images/pict/sample-cat.png",width: '120px', alt: "logo2")
-          .buy-main__container__content__inner__item-box__price-box
-            %p.buy-main__container__content__inner__item-box__price-box__name
-              = @product.name
-              .buy-main__container__content__inner__item-box__price-box__price
-                %span
-                  = @product.price
-                  
-                %span 円 （税込）送料込み
+      .first_content
+        = image_tag @product.images[0].image_url, id: "main_image"
+      .sub_image
+        - @product.images.each_with_index do |image, i|
+          .sub_image_content
+            = image_tag image.image_url, id: "image#{i+1}"
+
+
+
     .buy-main__container__status
       .buy-main__container__status__price
         %ul
-          %h1 支払い金額
+          %h1.pay_price 支払い金額
           %li
             = @product.price
             %span 円 （税込）送料込み
@@ -44,7 +42,7 @@
             = form_tag(controller: :credits, action: :pay, method: :post) do
               %button 購入する
           %li
-            = link_to "TOPへ戻る", root_path, class: 'home_btn'
+            = link_to "TOPへ戻る", root_path, class: 'confirm_home_btn'
 
 
 //フッター部分テンプレートに差し替え
