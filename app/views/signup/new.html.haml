@@ -67,7 +67,7 @@
               必須
           .box__form
             .box__form__text
-              = f.date_select :birthday, start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1)
+              = f.date_select :birthday, with_css_classes:"", start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1), use_month_numbers: true
           .box__mark
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
           .box__next

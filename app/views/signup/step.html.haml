@@ -17,8 +17,7 @@
               都道府県
               %sp 必須
             .address__prefectures__form
-              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: '--', class: 'select-default'
-
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, include_blank: '--'
 
           .address__city
             .address__city__info
