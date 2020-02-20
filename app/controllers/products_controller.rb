@@ -58,16 +58,13 @@ class ProductsController < ApplicationController
   end
 
   def show
-    # @card = Credit.find_by(user_id: current_user.id)
-    @card = Credit.find_by(params[:id])
+
   end
 
 private
 
   def product_params
-    params.require(:product)
-    .permit(:name, :detail, :category_id, :size_id, :condition_id, :payer_id, :shippingaddress_id,
-     :shippingdate_id, :price, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :detail, :category_id, :size_id, :condition_id, :payer_id, :shippingaddress_id, :shippingdate_id, :price, images_attributes: [:image, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_product

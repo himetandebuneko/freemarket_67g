@@ -3,8 +3,9 @@ $(document).on('turbolinks:load', ()=> {
   const buildFileField = (num)=> {
     const html = `<div class="js-file_group" data-index="${num}">
                     <input type="file" name="product[images_attributes][${num}][image]" id="image" class="js-file">
-                    <div class="js-remove">削除</div>
-                  </div>`;
+                    <span class="js-remove">削除</span>
+                  </div>
+                  `;
     return html;
   }
   const buildImg = (index, url)=> {
@@ -18,17 +19,17 @@ $(document).on('turbolinks:load', ()=> {
 
   $('.hidden-destroy').hide();
 
-  $('input').on('change', 'js-remove', function(e) {
+  $('#image').on('change', function(e) {
     const targetIndex = $(this).parent().data('index');
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
 
-    if (img = $(`img[data-id="${targetIndex}"]`)[0]) {
+    if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
     } else {
       $('img:last').after(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
-      $('.edit-sub_image__ultext').append(buildFileField(fileIndex[0]));
+      $('.edit-first_content_image').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1)     
@@ -39,7 +40,6 @@ $(document).on('turbolinks:load', ()=> {
     const targetIndex = $(this).parent().next().next().data('index');
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
     if (hiddenCheck) hiddenCheck.prop('checked', true);
-    debugger
     $(this).prev().remove();
     $(this).remove();
     $(`img[data-index="${targetIndex}"]`).remove();

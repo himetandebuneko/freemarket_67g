@@ -9,7 +9,7 @@
       .credits_form__label
         クレジットカード情報入力
       .credits_form__box
-        = form_with url: credits_path, id: 'credit_form' do |f|
+        = form_with url: credits_path, id: 'credit_form', local: true do |f|
           .credits_form__box__number
             = f.label :カード番号, class: 'form_label'
             %span.caution 必須

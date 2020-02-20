@@ -49,7 +49,7 @@
             %div
               .select-wrap
                 %i.fa.fa-chevron-down
-                -# = f.collection_select :category_id, @category, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
+                = f.collection_select :category_id, Category.all, :id, :name, { prompt: "---" }, { class: "category_select-box", id: "category_select" }
               .product_select-children
             %label
               サイズ
