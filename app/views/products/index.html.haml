@@ -5,12 +5,6 @@
     = image_tag "https://picsum.photos/1250/400", class:"google_image", alt:""
   -# = link_to "#" do
   -#   = image_tag "https://picsum.photos/1700/400", class:"google_image", alt:""
-  -# .apple-link
-  -# = link_to "#" do
-  -#   -# = image_tag("/images/link/en_badge_web_generic.png", class:"apple_image", alt:"")
-  -# .google-link
-  -# = link_to "#" do
-  -#   = image_tag "/link/en_badge_web_generic.png", class:"google_image", alt:""
 
 .main
   .main__top
@@ -21,8 +15,6 @@
       %li メンズ
       %li 家電・スマホ
 
-  %h3 レディース新着アイテム
-  = link_to "もっと見る ＞","#", class:"more"
   - if @product.blank?
     .first 
   - else
@@ -56,33 +48,6 @@
               .first__contents__header__name
               .first__contents__header__more
               
-  %h3 メンズ新着アイテム
-  = link_to "もっと見る ＞","#", class:"more"
-  .second__contents
-    .second__contents__header
-    .second__contents__content
-      .second__contents__content__img
-      .second__contents__content__text-box
-    .second__contents__price-box
-      .second__contents__box
-        .second__contents__header
-          .second__contents__header__name
-          .second__contents__header__more
-
-
-  %h3 家電・スマホ新着アイテム
-  = link_to "もっと見る ＞","#", class:"more"
-  .main__contents
-    .main__contents__header
-    .main__contents__content
-      .main__contents__content__img
-      .main__contents__content__text-box
-    .main__contents__price-box
-      .main__contents__box
-        .main__contents__header
-          .main__contents__header__name
-          .main__contents__header__more
-
 .footer
   = render 'footer'
 

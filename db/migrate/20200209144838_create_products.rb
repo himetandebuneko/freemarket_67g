@@ -5,7 +5,8 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :detail, null: false, index: true
       t.integer :size_id, null: false
       t.integer :price, null: false
-      t.integer :status_id
+      t.integer :status_id, default: 0
+
       t.integer :condition_id, null: false
       t.integer :shippingaddress_id, null: false
       t.integer :shippingdate_id, null: false

@@ -74,7 +74,9 @@ ActiveRecord::Schema.define(version: 2020_02_14_100914) do
     t.string "detail", null: false
     t.integer "size_id", null: false
     t.integer "price", null: false
-    t.integer "status_id"
+
+    t.integer "status_id", default: 0
+
     t.integer "condition_id", null: false
     t.integer "shippingaddress_id", null: false
     t.integer "shippingdate_id", null: false
