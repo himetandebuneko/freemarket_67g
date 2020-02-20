@@ -1,6 +1,5 @@
 .address_form {
   width: 400px;
-  background-color: $backgroundColor;
   height: 30px;
   padding: 5px 15px;
   margin: 15px;
@@ -8,6 +7,18 @@
   border: 1px solid;
   border-radius: 4px;
 }
+
+#user_prefecture {
+  width: 400px;
+  height: 30px;
+  padding: 5px 15px;
+  margin: 15px;
+  line-height: 30px;
+  border: 1px solid;
+  border-radius: 4px;
+
+}
+
 sp {
   font-size: 14px;
   color: $mainWhiteColor;
@@ -47,6 +58,7 @@ sp {
               text-align: left;
             }
             &__form {
+              
             }
           }
           &__city {
@@ -88,6 +100,7 @@ sp {
               line-height: 50px;
               .address_btn {
                 color: $mainWhiteColor;
+                border-radius: 5px;
                 background-color: #ea352d;
                 text-align: center;
                 width: 100%;

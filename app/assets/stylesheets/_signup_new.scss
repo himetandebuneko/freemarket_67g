@@ -54,32 +54,65 @@
             background-color: #ea352d;
             color: #fff;
             font-size: 12px;
+            padding: 4px;
             margin-left: 10px;
+            border-radius: 3px;
           }
         }
         .box__form {
           font-size: 16px;
           display: flex;
           .name__text {
+            border: 1px solid;
+            border-radius: 3px;
             padding: 10px 140px 10px 20px;
             margin: 10px 0 10px 10px;
           }
           &__text {
             .lastname {
+              width: 140px;
+              border: 1px solid;
+              border-radius: 3px;
               padding: 10px 0px 10px 20px;
               margin: 10px 0px 10px 0px;
-              width: 100%;
+              
             }
             .firstname {
+              width: 140px;
+              border: 1px solid;
+              border-radius: 3px;
               padding: 10px 0px 10px 20px;
               margin: 10px 0 10px 10px;
-              width: calc(100% - 5px);
             }
-            .birthday {
-              padding: 10px 0px 10px 10px;
-              margin: 10px 0px 10px 0px;
-              width: 76px;
+            .year {
+              background-color: #fff;
+              border: 1px solid;
+              border-radius: 3px;
+              height: 43px;
+              width: 100px;
+              margin: 10px 5px;
             }
+            .month {
+              background-color: #fff;
+              border: 1px solid;
+              border-radius: 3px;
+              height: 43px;
+              width: 100px;
+              margin: 10px 3px;
+            }
+            .day {
+              background-color: #fff;
+              border: 1px solid;
+              border-radius: 3px;
+              height: 43px;
+              width: 100px;
+              margin: 10px 5px;
+            }
+            // .birthday {
+            //   padding: 10px 0px 10px 10px;
+            //   margin: 10px 0px 10px 0px;
+            //   width: 76px;
+            // }
           }
           &__letter {
             line-height: 65px;
@@ -88,7 +121,7 @@
         .box__mark {
           color: #888;
           font-size: 14px;
-          margin: 5px 0 10px 0;
+          margin: 10px 0 0;
         }
         .box__check {
           display: flex;
@@ -109,7 +142,7 @@
           }
         }
         .box__next {
-          margin: 40px 0 10px 0;
+          margin: 30px 0 10px 0;
           font-size: 14px;
           text-align: center;
         }
@@ -119,6 +152,7 @@
           align-items: center;
           margin: 20px 0 30px 0;
           input {
+            border-radius: 10px;
             background-color: #ea352d;
             color: #fff;
             padding: 10px 130px;
