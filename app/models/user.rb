@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   # validates :nickname, :lastname, :firstname, :lastnamekana, :firstnamekana, :birthday, presence: true
-  validates :address, presence: true
+  # validates :address, presence: true
   has_many :comments, dependent: :destroy
   has_many :todos, dependent: :destroy
   has_many :products, dependent: :destroy
@@ -12,5 +12,5 @@ class User < ActiveRecord::Base
   has_many :news, dependent: :destroy
   has_many :credits, dependent: :destroy
   has_one :address, dependent: :destroy
-  accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :address, update_only: true
 end
