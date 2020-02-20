@@ -1,29 +1,55 @@
-.form
-  住所情報登録
-  = form_with model: @user, url: signup_index_path, id: 'user', class: 'new_address', local: true do |f|
-    .field
-      郵便番号
-    .field
-      = f.text_field :postcode
-    .field
-      都道府県
-    .field
-      = f.text_field :prefectures
-    .field
-      市区町村
-    .field
-      = f.text_field :city
-    .field
-      番地
-    .field
-      = f.text_field :housenumber
-    .field
-      住宅名
-    .field
-      = f.text_field :housename
-    .field
-      電話番号
-    .field
-      = f.text_field :phonenumber
-    .actions
-      = f.submit "Sign up"
+
+.addressMain
+  .addressMain__login
+    .addressMain__login__account
+      会員情報入力  
+    .addressMain__login__form
+      = form_with model: @user, url: signup_index_path, id: 'user', class: 'new_address', local: true do |f|
+        .address
+          .address__postCode
+            .address__postCode__info
+              郵便番号
+              %sp 必須
+            .address__postCode__form
+              = f.text_field :postcode, placeholder: '(例) 111-111', class: 'address_form'
+
+          .address__prefectures
+            .address__prefectures__info
+              都道府県
+              %sp 必須
+            .address__prefectures__form
+              = f.text_field :postcode, placeholder: '(例) 東京都',class: 'address_form'
+
+
+          .address__city
+            .address__city__info
+              市区町村
+              %sp 必須
+            .address__city__form
+              = f.text_field :city, placeholder: '(例) 新宿区神南',class: 'address_form'
+            
+          .address__houseNumber
+            .address__houseNumber__info
+              番地
+              %sp 必須
+            .address__houseNumber__form
+              = f.text_field :housenumber, placeholder: '(例) 1丁目18−2', class: 'address_form'
+
+          .address__houseName
+            .address__houseName__info
+              アパート名・住宅名
+              %sp 必須
+            .address__houseName__form
+              = f.text_field :housename, placeholder: '(例) フレーム神南坂4階', class: 'address_form'
+
+
+          .address__phoneNumber
+            .address__phoneNumber__info
+              電話番号
+              %sp 必須
+            .address__phoneNumber__form
+              = f.text_field :phonenumber, placeholder: '(例) 09012345678',class: 'address_form'
+        
+          .address__action
+            .address__action__submit
+              = f.submit "会員登録", class: 'address_btn'
