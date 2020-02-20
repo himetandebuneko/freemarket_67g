@@ -8,7 +8,7 @@
     background-color: $mainWhiteColor;
     width: 700px;
     padding: 24px 40px 40px 40px;
-    margin: 10px auto;
+    margin: 0 auto;
     &__name {
       font-size: 24px;
       font-weight: bold;
@@ -22,29 +22,239 @@
       margin: auto;
       margin-top: 10px;
       width: 620px;
-      .edit-first_content {
+    }  
+      .sell-content {
         width: 620px;
-        height: 443px;
-        margin-top: 16px;
-        text-align: center;
-        list-style: none;
-        #image1 {
-          height: 346px;
-          width: 560px;
-          object-fit: cover;
-          
-        }
-        .edit-sub_image {
-          display: flex;
-          justify-content: center;
-          list-style: none;
-          object-fit: cover;
-          .image1, .image2, .image3, .image4 {
-            height: 75px;
-            width: 75px;
-            object-fit: cover;
-            margin: 10px 5px;
+        padding: 40px 2.5%;
+        .form-group{
+          font-size: 16px;
+          margin-bottom: 30px;
+          margin-top: 40px;
+          border: o;
+          .input-default{
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            width: 98%;
+            margin: 8px 0 0;
+            height: 30px;
+            text-align: right;
+            margin: 0;
           }
+          .textarea-default{
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            min-height: 104px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+            font-size: 16px;
+            line-height: 1.5;
+          }
+        }
+        h3{
+          font-size: 22px;
+        }
+        .form-text{
+          height: 26px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          width: 100%;
+          margin-bottom: 45px;
+        }
+        .form-textarea{
+          display: block;
+          width: 100%;
+          max-width: 100%;
+          min-height: 104px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          background: #fff;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+      }
+      .sell-content{
+        width: 620px;
+        padding: 40px 2.5%;
+        height: 300px;
+        .sell-sub-head{
+          float: left;
+        }
+        .sell-form-box{
+          float: right;
+          width: 400px;
+          margin: 0;
+        }
+        .select-default{
+          float: right;
+          width: 400px;
+          margin: 0;   
+          position: relative;
+          z-index: 2;
+          height: 48px;
+          padding: 0 16px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: 0;
+          font-size: 16px;
+          line-height: 1.5;
+          cursor: pointer;
+          margin-bottom: 45px;
+        }
+        #product_shippingaddress_id{
+          float: right;
+          width: 400px;
+          margin: 0;   
+          position: relative;
+          z-index: 2;
+          height: 48px;
+          padding: 0 16px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: 0;
+          font-size: 16px;
+          line-height: 1.5;
+          cursor: pointer;
+          margin-bottom: 45px;
+        }
+        #product_payer_id{
+          float: right;
+          width: 400px;
+          margin: 0;   
+          position: relative;
+          z-index: 2;
+          height: 48px;
+          padding: 0 16px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: 0;
+          font-size: 16px;
+          line-height: 1.5;
+          cursor: pointer;
+          margin-bottom: 45px;
+        }
+        #product_size_id{
+          float: right;
+          width: 400px;
+          margin: 0;   
+          position: relative;
+          z-index: 2;
+          height: 48px;
+          padding: 0 16px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: 0;
+          font-size: 16px;
+          line-height: 1.5;
+          cursor: pointer;
+          margin-bottom: 45px;
+        }
+        #product_shippingdate_id{
+          float: right;
+          width: 400px;
+          margin: 0;   
+          position: relative;
+          z-index: 2;
+          height: 48px;
+          padding: 0 16px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: 0;
+          font-size: 16px;
+          line-height: 1.5;
+          cursor: pointer;
+          margin-bottom: 45px;
+        }
+        #product_condition_id{
+          float: right;
+          width: 400px;
+          margin: 0;   
+          position: relative;
+          z-index: 2;
+          height: 48px;
+          padding: 0 16px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: 0;
+          font-size: 16px;
+          line-height: 1.5;
+          cursor: pointer;
+          margin-bottom: 45px;
+        }
+        .select-wrap{
+          position: relative;
+          background: #fff;
+          margin: 8px 0 0;
+          height: 50px;
+          .fa.fa-chevron-down{
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            z-index: 2;
+            color: #888;
+            font-size: 8px;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+          }
+        }
+        .category_select-box{
+          float: right;
+          width: 400px;
+          margin: 0;   
+          position: relative;
+          z-index: 2;
+          height: 48px;
+          padding: 0 16px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: 0;
+          font-size: 16px;
+          line-height: 1.5;
+          cursor: pointer;
+          margin-bottom: 15px;
+        }
+        .l-left{
+          float: left;
+        }
+        
+        .l-left.sell-price.form-team{
+          width: 50%;
+          line-height: 48px;
+        }
+        .l-right{
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+      .sell-price>li{
+        padding: 24px 0;
+        border-top: 1px solid #ccc;
+      }
+      .form-team{
+        display: flex;
+        justify-content: space-between;
+        .input-fee{
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          width: 150px;
+          margin: 8px 0 0;
+          height: 30px;
+          text-align: right;
+          margin: 0;
         }
       }
       .edit-second_content {
@@ -85,29 +295,53 @@
               }
             }
           }
-          .edit-done1 {
-            margin: 20px auto;
-            text-align: center;
-            .edit-done2 {
-              color: $mainWhiteColor;
-              font-size: 18px;
-              height: 48px;
-              line-height: 48px;
-              width: 60%;
-              border-radius: 100px;
-              border: 1px solid red;
-              background-color: red;
-              cursor: pointer;
-            }
-          }
+          
         }
       }
     }
-  }
-  .edit-footer {
+    .edit-done1 {
+      margin: 0 auto;
+      text-align: center;
+      .edit-done2 {
+        color: $mainWhiteColor;
+        font-size: 18px;
+        height: 48px;
+        line-height: 48px;
+        width: 60%;
+        border-radius: 100px;
+        border: 1px solid red;
+        background-color: red;
+        cursor: pointer;
+      }
+    }
+    .single-footer{
     width: 100vw;
-    height: 200px;
-    bottom: 0;
+    height: 220px;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    height: 250px;
+    padding: 40px 0;
+    text-align: center;
     background-color: $backgroundColor;
+    .clearfix{
+      font-size: 0;
+      width: 456px;
+      margin: 0 auto;
+      .first{
+        margin: 0 0 0 16px;
+        display: inline-block;
+        font-size: 1px;
+        .second{
+          display: block;
+          color: #333;
+        }
+      }
+    }
+    .third{
+      font-size: 1px;
+    }
   }
 }
