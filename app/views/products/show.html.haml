@@ -35,44 +35,43 @@
       - else
         = link_to 'ログインへ', new_user_session_path
       .second_content
-      商品コメントだよ
-      .products_info
-        %table
-          %tr
-            %th
-              出品者
-            %td
-              = @product.user.nickname
-          %tr
-            %th
-              カテゴリー
-            %td
-              = @product.category.name
-          %tr
-            %th
-              商品のサイズ
-            %td
-              = @product.size.name
-          %tr
-            %th
-              商品の状態
-            %td
-              = @product.condition.name
-          %tr
-            %th
-              配送料の負担
-            %td
-              = @product.payer.name
-          %tr
-            %th
-              発送元地域
-            %td
-              = @product.shippingaddress.name
-          %tr
-            %th
-              発送予定日数
-            %td
-              = @product.shippingdate.name
+        .products_info
+          %table
+            %tr
+              %th
+                出品者
+              %td
+                = @product.user.nickname
+            %tr
+              %th
+                カテゴリー
+              %td
+                = @product.category.name
+            %tr
+              %th
+                商品のサイズ
+              %td
+                = @product.size.name
+            %tr
+              %th
+                商品の状態
+              %td
+                = @product.condition.name
+            %tr
+              %th
+                配送料の負担
+              %td
+                = @product.payer.name
+            %tr
+              %th
+                発送元地域
+              %td
+                = @product.shippingaddress.name
+            %tr
+              %th
+                発送予定日数
+              %td
+                = @product.shippingdate.name
       .option
         %ul.likes
           %i.fas.fa-star
