@@ -9,7 +9,7 @@ $(document).on('turbolinks:load', ()=> {
     return html;
   }
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    const html = `<img class="preview_image" data-index="${index}" src="${url}" width="100px" height="100px">`;
     return html;
   }
   // file_fieldのnameに動的なindexをつける為の配列
