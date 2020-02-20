@@ -11,7 +11,7 @@ class SignupController < ApplicationController
     session[:address_attributes_after_new] = user_params[:address_attributes]
     @user = User.new(session[:user_params])
     @user.build_address(session[:address_attributes_after_new])
-    render '/signup/new' unless @user.valid?
+    redirect_to new_signup_path unless @user.valid?
   end 
 
   def step
@@ -27,7 +27,7 @@ class SignupController < ApplicationController
       sign_in(@user)
       redirect_to complete_signup_signup_index_path
     else
-      render '/signup/new'
+      redirect_to new_signup_path
     end
   end
 
