@@ -295,22 +295,23 @@
               }
             }
           }
-          .edit-done1 {
-            margin: 20px auto;
-            text-align: center;
-            .edit-done2 {
-              color: $mainWhiteColor;
-              font-size: 18px;
-              height: 48px;
-              line-height: 48px;
-              width: 60%;
-              border-radius: 100px;
-              border: 1px solid red;
-              background-color: red;
-              cursor: pointer;
-            }
-          }
+          
         }
+      }
+    }
+    .edit-done1 {
+      margin: 0 auto;
+      text-align: center;
+      .edit-done2 {
+        color: $mainWhiteColor;
+        font-size: 18px;
+        height: 48px;
+        line-height: 48px;
+        width: 60%;
+        border-radius: 100px;
+        border: 1px solid red;
+        background-color: red;
+        cursor: pointer;
       }
     }
     .single-footer{
