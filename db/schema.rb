@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_02_14_100914) do
     t.string "city", default: "", null: false
     t.string "housenumber", default: "", null: false
     t.string "housename"
-    t.integer "phonenumber"
+    t.string "phonenumber", default: ""
     t.bigint "user_id", null: false
     t.string "prefecture_id", default: "", null: false
     t.datetime "created_at", null: false
