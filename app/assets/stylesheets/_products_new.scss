@@ -162,10 +162,12 @@ body {
             #image-box {
               #previews {
                 display: flex;
-                .product_images_attributes_1_image {
-                  position: absolute;
-                  top: -50px;
-                  left: -100px;
+                .label_field {
+                  line-height: 100px;
+                  color: $mainBlueColor;
+                }
+                .js-remove {
+                  color: $mainBlueColor;
                 }
               }
             }

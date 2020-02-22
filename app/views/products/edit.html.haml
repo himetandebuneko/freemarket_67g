@@ -16,17 +16,17 @@
       .edit-contents
         .edit-first_content
           %ul.edit-first_content_image
-            - @product.images.each do |img|
-              = image_tag img.image_url, class: "preview_image"
+            - @product.images.each_with_index do |img, num|
+              = image_tag img.image_url, class: "preview_image change_image", id: "preview_image_id_#{num}"
             = f.fields_for :images do |i|
-              .js-file_group{ data: { index: "#{@product.images.count}" }}
-                = i.file_field :image,"data-index": "#{i.index}",class: "js-file"
+              .js-file_group{ data: { index: "#{i.index}" }}
+                = i.file_field :image,"data-index": "#{i.index}",class: "js-file input_btn"
                 %span.js-remove 削除
               - if @product.persisted?
                 = i.check_box :_destroy, data: { index: i.index }, class: 'hidden-destroy'
-            - if @product.persisted?
+            - if @product.persisted? && @product.images.length <= 4
               .js-file_group{ data: { index: "#{@product.images.count}" }}
-                = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: "js-file"
+                = file_field_tag :image, name: "product[images_attributes][#{@product.images.count}][image]", class: "js-file input_btn"
                 %span.js-remove 削除
       .sell-content
         .form-group

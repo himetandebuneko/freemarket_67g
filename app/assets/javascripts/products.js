@@ -49,6 +49,6 @@ $(document).on('turbolinks:load', ()=> {
     $(this).parent().remove();
     $(`img[data-id="${targetIndex}"]`).remove();
     // 画像入力欄が0個にならないようにしておく
-    if ($('.js-file').length == 0) $('#preview').append(buildFileField(fileIndex[0]));
+    // if ($('.js-file').length == 0) $('.preview').append(buildFileField(fileIndex[0]));
   });
 });
