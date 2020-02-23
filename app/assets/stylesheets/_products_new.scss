@@ -160,33 +160,14 @@ body {
             float: right;
             margin-left: 2%;
             #image-box {
-              width: 100px;
-              height: 162px;
               #previews {
                 display: flex;
-                width: 100px;
-                height: 162px;
-                .js-file_group {
-                  position: relative;
-                  width: 100px;
-                  height: 100px;
-                  input {
-                    position: absolute;
-                    top: -50px;
-                    left: -50px;
-                  }
-                  .product_images_attributes_1_image {
-                    position: absolute;
-                    top: -50px;
-                    left: -100px;
-                  }
-                  .js-remove {
-                   position: absolute;
-                   margin-left: 30px;
-                   top: -50px;
-                   left: -100px;
-                   width: 50px;
-                  }
+                .label_field {
+                  line-height: 100px;
+                  color: $mainBlueColor;
+                }
+                .js-remove {
+                  color: $mainBlueColor;
                 }
               }
             }

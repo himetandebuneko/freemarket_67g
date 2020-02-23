@@ -16,7 +16,7 @@
                   出品画像
                   %span.form-require
                     必須
-                %p 最大10枚までアップロードできます
+                %p 最大5枚までアップロードできます
                 .sell-dropbox-container.clearfix.state-image-number-10 
                   .sell-upload-items-container
                     .sell-upload-items.have-item-0
@@ -24,20 +24,12 @@
                   .sell-upload-drop-box.have-item-0
                     #image-box
                       #previews
-                        - if @product.persisted?
-                          - @product.images.each_with_index do |image, im|
-                            = image_tag image.src.url, data: { index: im}, width: "100", height: "100"
                         = f.fields_for :images do |i|
-                          .js-file_group{data: {id: "#{i.index}"}}
-                            = i.file_field :image, class: "js-file"
-                            .js-remove 
-                          - if @product.persisted?
-                            = i.check_box :destroy, data:{ id: image.index }, class: 'hidden-destroy'
-                        - if @product.persisted?
-                          .js-file_group{data: {id: "#{@product.images.count}"}}
-                            = i.file_field :image, name: "product[images_attributes][#{@product.images.count}][image]", class: "js-file"
-                            .js-remove 削除
-                    %pre.visible-pc ドラッグアンドドロップまたはクリックしてファイルをアップロード
+                          = i.label :image, "画像を選択", class: "label_field", style: "background-color: white; width: 100px; height: 100px;"
+                          .js-file_group{data: { id: "#{i.index}" }}
+                            = i.file_field :image, class: "js-file", style: "display: none;"
+                            .js-remove
+                    %pre.visible-pc クリックしてファイルをアップロード
                     %i.icon-camera
               .sell-content
                 .form-group
